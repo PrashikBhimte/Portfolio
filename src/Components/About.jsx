@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import "./About.css";
-import img from "../../Images/1.jpg";
+import img from "../Images/1.jpg";
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import { IoDocumentText } from "react-icons/io5";

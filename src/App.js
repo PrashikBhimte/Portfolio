@@ -1,24 +1,24 @@
 import './App.css';
-import Navbar from "./Components/navbar/Navbar";
-import HeroPage from "./Components/heropage/HeroPage";
-import About from './Components/about/About';
-import Skills from './Components/skills/Skills';
-import Qualifications from './Components/qualifications/Qualifications';
-// import Projects from './Components/projects/Projects';
-// import Certifications from './Components/certifications/Certifications';
-import Footer from './Components/footer/Footer';
+import Navbar from "./Components/Navbar";
+import HeroPage from "./Components/HeroPage";
+// import About from './Components/About';
+// import Skills from './Components/Skills';
+// import Qualifications from './Components/Qualifications';
+// import Projects from './Components/Projects';
+// import Certifications from './Components/Certifications';
+// import Footer from './Components/Footer';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <HeroPage />
-      <About />
-      <Skills />
-      <Qualifications />
+      {/* <About /> */}
+      {/* <Skills /> */}
+      {/* <Qualifications /> */}
       {/* <Projects />
       <Certifications /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

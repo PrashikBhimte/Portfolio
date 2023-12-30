@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import "./HeroPage.css";
-import img from "../../Images/2.jpg";
+import img from "../Images/2.jpg";
 import AOS from "aos";
 import 'aos/dist/aos.css';
 import { BsFillSendFill } from "react-icons/bs";
@@ -17,21 +16,21 @@ export default function HeroPage() {
     }, []);
 
   return (
-    <section id='home' className='heropage'>
-        <div data-aos="zoom-in" className='homeIntro'>
-            <div>
-                <h1><span>Hey,</span>I'm Prashik</h1>
+    <section data-aos="zoom-in" id='home' className='w-screen h-screen'>
+        <div className='h-3/4 flex justify-center items-center'>
+            <div className='w-1/4'>
+                <h1 className='text-5xl'><span>Hey,</span>I'm Prashik</h1>
                 <p>I am student at SGGS, Nanded.</p>
                 <button>
                     Explore <BsFillSendFill />
                 </button>
             </div>
-            <div>
-                <img src={img} alt='animage' />
+            <div className='w-1/4'>
+                <img className='w-full' src={img} alt='animage' />
             </div>
         </div>
-        <div data-aos="zoom-in" className='homeSocial'>
-            <ul>
+        <div className='w-full flex justify-center items-center'>
+            <ul className='w-3/4 flex justify-evenly items-center'>
                 <li><a href="#linkedin">LINKEDIN</a></li>
                 <li><a href="#github">GITHUB</a></li>
                 <li><a href="#instagram">INSTAGRAM</a></li>

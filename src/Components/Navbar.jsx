@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import "./Navbar.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -15,8 +14,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav data-aos="fade-down">
-        <ul>
+    <nav data-aos="fade-down" className='w-screen flex items-center justify-evenly'>
+        <ul className='w-1/2 justify-evenly items-center text-lg xl:flex'>
             <li><a href='#home'>Home</a></li>
             <li><a href='#about'>About</a></li>
             <li><a href='#skills'>Skills</a></li>
@@ -25,7 +24,7 @@ export default function Navbar() {
             <li><a href='#certifications'>Certifications</a></li> */}
             <li><a href='#contact'>Contact</a></li>
         </ul>
-        <h3>Prashik Bhimte</h3>
+        <h3 className='w-1/4 hidden justify-center items-center text-lg xl:flex'>Prashik Bhimte</h3>
     </nav>
   )
 }
