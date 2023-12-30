@@ -1,0 +1,34 @@
+.qualifications {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.qualifications h3 {
+    font-size: 35px;
+}
+
+.qualificationsinfo {
+    width: 40%;
+}
+
+.qualificationsinfo div {
+    padding: 25px;
+}
+
+.qualificationsinfo h4 {
+    font-size: 20px;
+}
+
+.qualificationsinfo h4, .qualificationsinfo p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.italic {
+    font-style: italic;
+    font-size: 12px;
+}

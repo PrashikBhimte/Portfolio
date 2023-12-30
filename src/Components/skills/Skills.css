@@ -1,0 +1,30 @@
+.skills {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills h3 {
+    font-size: 35px;
+}
+
+.skills ul {
+    width: 60%;
+    height: auto;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills ul li {
+    width: 40%;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
