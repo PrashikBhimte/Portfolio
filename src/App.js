@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from "./Components/Navbar";
-// import HeroPage from "./Components/HeroPage";
+import HeroPage from "./Components/HeroPage";
 // import About from './Components/About';
 // import Skills from './Components/Skills';
 // import Qualifications from './Components/Qualifications';
@@ -10,9 +10,9 @@ import Navbar from "./Components/Navbar";
 
 function App() {
   return (
-    <div className="App">
+    <div className="overflow-x-hidden">
       <Navbar />
-      {/* <HeroPage /> */}
+      <HeroPage />
       {/* <About /> */}
       {/* <Skills /> */}
       {/* <Qualifications /> */}

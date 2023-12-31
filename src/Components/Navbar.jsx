@@ -44,7 +44,7 @@ export default function Navbar() {
   }, [windowWidth]);
 
   return (
-    <nav data-aos="fade-down" className='bg-blue-700 w-screen h-8 xl:bg-transparent fixed flex items-center justify-center '>
+    <nav data-aos="fade-down" className='bg-blue-700 w-screen h-8 xl:bg-transparent flex items-center justify-center '>
         <ul id='ul' className='absolute inset-y-0 left-0 xl:relative xl:bg-transparent xl:flex-row bg-black/40 flex-col w-screen max-w-xs h-screen xl:h-full xl:max-w-none xl:w-1/2 hidden justify-evenly items-center text-lg xl:flex'>
             <li><a href='#home'>Home</a></li>
             <li><a href='#about'>About</a></li>
@@ -56,7 +56,7 @@ export default function Navbar() {
             <li><a onClick={closeMenu} className='xl:hidden' href='#none'>Close</a></li>
         </ul>
         <div onClick={openMenu} className='w-1/2 md:w-3/4 xl:hidden text-3xl text-white'><HiMenuAlt1 /></div>
-        <h3 className='w-1/2 md:w-1/4 text-white text-center xl:text-right text-lg'>Prashik Bhimte</h3>
+        <h3 className='w-1/2 md:w-1/4 text-white xl:text-black text-center xl:text-right text-lg'>Prashik Bhimte</h3>
     </nav>
   )
 }
