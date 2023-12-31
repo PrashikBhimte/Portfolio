@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from "./Components/Navbar";
-import HeroPage from "./Components/HeroPage";
+// import HeroPage from "./Components/HeroPage";
 // import About from './Components/About';
 // import Skills from './Components/Skills';
 // import Qualifications from './Components/Qualifications';
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <HeroPage />
+      {/* <HeroPage /> */}
       {/* <About /> */}
       {/* <Skills /> */}
       {/* <Qualifications /> */}
