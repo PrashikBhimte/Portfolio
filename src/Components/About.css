@@ -14,7 +14,7 @@
     justify-content: flex-end;
     align-items: flex-end;
     margin: 0;
-    padding: 0;
+    padding: 10px;
 }
 
 #about_pic_img {
@@ -39,11 +39,15 @@
     height: 400px;
     z-index: 10;
     margin: 0;
-    padding: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 #about_info h1 {
-    font-size: 50px;
+    font-size: 40px;
     margin: 30px 0px;
 }
 
@@ -55,7 +59,7 @@
 #about_info button {
     width: 150px;
     height: 45px;
-    background-color: #4537D0;
+    background-color: #615CFD;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,5 +72,26 @@
 @media screen and (max-width : 1000px) {
     #about {
         flex-direction: column;
+    }
+    #about_pic {
+        width: 100vw;
+        max-width: 500px;
+        height: 50vh;
+        padding: 0;
+    }
+    #about_pic_img {
+        width: 100%;
+        height: 100%;
+    }
+    #color_grid {
+        right: 0;
+        top: 40vh;
+    }
+    #about_info {
+        width: 100%;
+        max-width: 500px;
+    }
+    #about_info h1 {
+        margin: 30px 10px;
     }
 }

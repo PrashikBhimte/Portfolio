@@ -6,11 +6,8 @@ export default function About() {
   return (
     <div id='about'>
       <div id="about_info">
-        <h1>About</h1>
-        <p>dskc hsd c dsh cd d c dc hds c ds c sd cbsd cb b  sdh cb dshcsdch hdc dshc hd sc dsh c dsc dsh ch dsc ds c dshc ds c
-        dskc hsd c dsh cd d c dc hds c ds c sd cbsd cb b  sdh cb dshcsdch hdc dshc hd sc dsh c dsc dsh ch dsc ds c dshc ds c
-        dskc hsd c dsh cd d c dc hds c ds c sd cbsd cb b  sdh cb dshcsdch hdc dshc hd sc dsh c dsc dsh ch dsc ds c dshc ds c
-        dskc hsd c dsh cd d c dc hds c ds c sd cbsd cb b  sdh cb dshcsdch hdc dshc hd sc dsh c dsc dsh ch dsc ds c dshc ds c
+        <h1>About Me</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida Risus com odo viverra maecenas.
         </p>
         <button>Download CV</button>
       </div>

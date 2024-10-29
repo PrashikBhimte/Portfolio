@@ -13,7 +13,7 @@
 }
 
 #menu_open, #menu_close {
-    z-index: 10;
+    z-index: 101;
     font-size: 32px;
     position: absolute;
     top: 20px;

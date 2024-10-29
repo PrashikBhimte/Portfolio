@@ -11,7 +11,7 @@ body {
 .watermark {
     width: 600px;
     height: 300px;
-    color: rgb(219, 218, 218);
+    color: #F1F1F1;
     font-size: 250px;
     position: absolute;
     top: 0;
