@@ -20,6 +20,7 @@
     width: 100%;
     padding: 10px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 #footer_header p {
@@ -85,6 +86,7 @@
     color: white;
     margin: 0;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 #footer_bottom h3 {
@@ -94,8 +96,18 @@
 
 #footer_bottom p {
     font-size: 1.2rem;
+    text-align: center;
 }
 
 #footer_bottom hr {
     width: 90%;
+}
+
+@media screen and (max-width : 1000px) {
+    #footer_mid {
+        flex-direction: column;
+    }
+    #mid_right {
+        width: 90%;
+    }
 }

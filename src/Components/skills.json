@@ -1,0 +1,30 @@
+{
+    "Data1" : [
+        {
+            "head" : "Programming Languages",
+            "skills" : "Python, JavaScript, SQL, C, Java"
+        },
+        {
+            "head" : "Data Science and Machine Learning",
+            "skills" : "NumPy, Pandas, Scikit-learn, TensorFlow"
+        },
+        {
+            "head" : "Web Development",
+            "skills" : "HTML5, CSS, Javascript, React js, Node js, Express js, Flask"
+        }
+    ],
+    "Data2" : [
+        {
+            "head" : "Databases",
+            "skills" : "MySql, SQLite3"
+        },
+        {
+            "head" : "Operating Systems",
+            "skills" : "Windows, Linux"
+        },
+        {
+            "head" : "Tools and Technologies",
+            "skills" : "Git, GitHub, Visual Studio Code, PyCharm"
+        }
+    ]
+}

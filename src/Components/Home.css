@@ -104,6 +104,10 @@
         right: 20px;
         bottom: 20px;
     }
+    #home_header {
+        justify-content: flex-start;
+        padding-left: 0;
+    }
 }
 
 @media screen and (max-width : 800px) {
