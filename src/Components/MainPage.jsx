@@ -4,6 +4,8 @@ import Home from './Home';
 import About from './About';
 import Navbar from './Navbar';
 import { RiCloseLargeFill, RiMenu4Fill } from "react-icons/ri";
+import Skills from './Skills';
+import Education from './Education';
 
 export default function MainPage() {
 
@@ -31,6 +33,12 @@ export default function MainPage() {
       </div>
       <div className="mainpage_div">
         <About />
+      </div>
+      <div className="mainpage_div">
+        <Skills />
+      </div>
+      <div className="mainpage_div">
+        <Education />
       </div>
     </div>
   )

@@ -24,3 +24,18 @@ body {
     align-items: center;
     z-index: 0;
 }
+
+.heading {
+    width: 100vw;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading h1 {
+    font-size: 2rem;
+    text-decoration: underline;
+}
