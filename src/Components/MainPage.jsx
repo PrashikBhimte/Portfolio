@@ -50,7 +50,9 @@ export default function MainPage() {
       <div className="mainpage_div">
         <Certificates />
       </div>
-      <Testimonials />
+      <div className="mainpage_test_div">
+        <Testimonials />
+      </div>
       <Footer />
     </div>
   )

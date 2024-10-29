@@ -6,7 +6,6 @@
 }
 
 #skills_con {
-    margin-top: 100px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -17,8 +16,7 @@
 
 #skills_white, #skills_blue {
     width: 100%;
-    height: auto;
-    min-height: 50vh;
+    height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: center;

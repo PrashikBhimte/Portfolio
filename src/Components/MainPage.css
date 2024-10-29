@@ -12,6 +12,10 @@
     position: relative;
 }
 
+.mainpage_test_div {
+    position: relative;
+}
+
 #menu_open, #menu_close {
     z-index: 101;
     font-size: 32px;
