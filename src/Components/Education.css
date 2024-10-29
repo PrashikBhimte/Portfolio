@@ -13,8 +13,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 100px;
+    align-items: center;
 }
 
 #educ_info {
@@ -58,9 +57,6 @@
 }
 
 @media screen and (max-width : 1000px) {
-    #education_con {
-        padding: 0;
-    }
     #side_bar {
         margin-left: 20px;
     }
