@@ -111,3 +111,15 @@
         width: 90%;
     }
 }
+
+@media screen and (max-width : 450px) {
+    #footer_mid {
+        padding: 0;
+    }
+    #mid_left {
+        padding: 0;
+    }
+    #mid_left li {
+        padding: 10px;
+    }
+}

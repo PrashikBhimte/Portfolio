@@ -1,0 +1,25 @@
+{
+    "projects" : [
+        {
+            "name" : "Breast Cancer Detection",
+            "duration" : "Jun 2024 - Jul 2024",
+            "description" : "Developed a machine learning model using logistic regression to detect breast cancer from a dataset containing various attributes of breast tumors. Achieved an accuracy of 96.7% and Standard deviation of 1.96. The project demonstrates my skills in:\n- Data preprocessing and visualization\n- Model selection and evaluation\n- Performance metrics analysis\n- Machine learning algorithm implementation\n",
+            "github" : "https://github.com/PrashikBhimte/Breast-Cancer-Detector",
+            "skills" : "Python (Programming Language) · Scikit-Learn · python pandas · Machine Learning · Logistic Regression"
+        },
+        {
+            "name" : "ANN prediction of electrical energy output of a Combined Cycle Power Plant",
+            "duration" : "Jul 2024 - Jul 2024",
+            "description" : "This project aims to develop an Artificial Neural Network (ANN) model to predict the electrical energy output of a combined cycle power plant. The model is trained on a dataset of historical power plant data, including input parameters such as temperature, pressure, and flow rate, and output parameter of electrical energy output. The goal is to achieve high accuracy in predicting electrical energy output, enabling optimal operation and maintenance of the power plant.\nKey Features:\n- Development of an ANN model using TensorFlow and Scikit-learn libraries\n- Training on a dataset of historical power plant data\n- Prediction of electrical energy output with high accuracy (90.36%)\n- Potential applications in real-time prediction and optimization of power plant operation\nOutcome:\n- A trained ANN model capable of predicting electrical energy output with high accuracy\n- A Python script for making predictions using the trained model\n- A report detailing the project methodology, results, and conclusions\n",
+            "github" : "https://github.com/PrashikBhimte/ANN-prediction-of-electrical-energy-output-of-a-Combined-Cycle-Power-Plant",
+            "skills" : " Python (Programming Language) · TensorFlow · Scikit-Learn · NumPy · python pandas"
+        },
+        {
+            "name" : "Predicting Passenger Survival on the Titanic Using Machine Learning Techniques",
+            "duration" : "Sep 2024 - Oct 2024",
+            "description" : "This project leverages machine learning algorithms to predict passenger survival on the RMS Titanic, utilizing a publicly available dataset. The study evaluates and compares the performance of various classification models, including Logistic Regression, SVM, KNN, Random Forest, and Artificial Neural Network.\nObjectives:\n1. Predict passenger survival on the Titanic using machine learning algorithms.\n2. Evaluate and compare the performance of different classification models.\nMethodology:\n1. Utilized the Kaggle Titanic dataset with 891 training instances and 418 test instances.\n2. Preprocessed data using SimpleImputer, OneHotEncoder, and StandardScaler.\n3. Evaluated Logistic Regression, SVM, KNN, Random Forest, and Artificial Neural Network models.\nResults:\n1. Artificial Neural Network achieved the highest accuracy of 0.78229.\n2. Comparative analysis of model performances.\nConclusion:\n1. Machine learning algorithms can effectively predict passenger survival on the Titanic.\n2. Artificial Neural Network outperformed other models in predicting survival.",
+            "github" : "https://github.com/PrashikBhimte/Titanic---Machine-Learning-from-Disaster",
+            "skills" : "Python (Programming Language) · TensorFlow · python pandas · Machine Learning · Artificial Neural Networks"
+        }
+    ]
+}

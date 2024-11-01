@@ -1,13 +1,24 @@
 {
     "Data" : [
         {
-            "test" : "1"
+            "testimonial" : "Hi there! I'm Prashik Bhimte, a machine learning enthusiast with a passion for building innovative AI applications. With a strong foundation in Python, I've developed a solid understanding of machine learning concepts and have completed several projects in the field.",
+            "name" : "Prashik Bhimte",
+            "relation" : "Owner"
         },
         {
-            "test" : "2"
+            "testimonial" : "Hi there! I'm Prashik Bhimte, a machine learning enthusiast with a passion for building innovative AI applications. With a strong foundation in Python, I've developed a solid understanding of machine learning concepts and have completed several projects in the field.",
+            "name" : "Prashik Bhimte",
+            "relation" : "Owner"
         },
         {
-            "test" : "3"
+            "testimonial" : "Hi there! I'm Prashik Bhimte, a machine learning enthusiast with a passion for building innovative AI applications. With a strong foundation in Python, I've developed a solid understanding of machine learning concepts and have completed several projects in the field.",
+            "name" : "Prashik Bhimte",
+            "relation" : "Owner"
+        },
+        {
+            "testimonial" : "Hi there! I'm Prashik Bhimte, a machine learning enthusiast with a passion for building innovative AI applications. With a strong foundation in Python, I've developed a solid understanding of machine learning concepts and have completed several projects in the field.",
+            "name" : "Prashik Bhimte",
+            "relation" : "Owner"
         }
     ]
 }

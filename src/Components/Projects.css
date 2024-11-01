@@ -1,0 +1,44 @@
+.pro_h {
+    background-color: #001D38;
+    color: white;
+}
+
+#project_con {
+    width: 100%;
+    height: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#pro_hed {
+    width: 100%;
+    height: 110px;
+    background-color: #001D38;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#project_con h1 {
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+    padding: 10px;
+}
+
+#list_pro {
+    width: 100%;
+    height: calc(100% - 110px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
