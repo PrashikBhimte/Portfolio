@@ -3,31 +3,23 @@
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-#skills_con {
-    width: 100%;
-    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(-90deg, #FFF 95%, #001D38 5%);
 }
 
-#skills_white, #skills_blue {
+#skills_con {
     width: 100%;
-    height: 50%;
+    max-width: 1500px;
+    height: calc(100% - 100px);
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-}
-
-#skills_white {
-    background-color: transparent;
-}
-
-#skills_blue {
-    background-color: #001D38;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
 }

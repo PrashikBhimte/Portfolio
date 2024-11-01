@@ -4,9 +4,9 @@ import Home from './Home';
 import About from './About';
 import Navbar from './Navbar';
 import { RiCloseLargeFill, RiMenu4Fill } from "react-icons/ri";
-import Skills from './Skills';
+import Skills from './Skills.jsx';
 import Education from './Education';
-import Projects from './Projects';
+// import Projects from './Projects';
 // import Testimonials from './Testimonials';
 import Footer from './Footer';
 import Certificates from "./Certificates.jsx";
@@ -44,9 +44,9 @@ export default function MainPage() {
       <div className="mainpage_div">
         <Education />
       </div>
-      <div className="mainpage_div">
+      {/* <div className="mainpage_div">
         <Projects />
-      </div>
+      </div> */}
       <div className="mainpage_div">
         <Certificates />
       </div>

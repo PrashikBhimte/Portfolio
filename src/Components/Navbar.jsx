@@ -23,7 +23,7 @@ export default function Navbar() {
             <li><a onClick={handleClickClose} href='#projects'>projects</a></li>
             <li><a onClick={handleClickClose} href='#certificates'>Certificates</a></li>
         </ul>
-        <button>Contact Me</button>
+        <a id='nav_but' href='#footer'>Contact Me</a>
     </div>
   )
 }

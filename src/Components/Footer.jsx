@@ -10,7 +10,7 @@ export default function Footer() {
     <div id='footer'>
         <div id="footer_header">
             <h2>Let's discuss for a project</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Ready to bring your vision to life? Let's make it happen together.</p>
         </div>
         <div id="footer_mid">
             <ul id="mid_left">
@@ -18,7 +18,7 @@ export default function Footer() {
                     <img src={address} alt='address' />
                     <ul>
                         <h3>Address</h3>
-                        <p>A108 Adam Street, New York, NY 535022</p>
+                        <p>300E, Dasiy-I, VST-5, Dewada, Chandrapur 442406</p>
                     </ul>
                 </li>
                 <li>
@@ -32,7 +32,7 @@ export default function Footer() {
                     <img src={email} alt='email' />
                     <ul>
                         <h3>Email me</h3>
-                        <p>info@example.com</p>
+                        <p>prashikbhimte29@gmail.com</p>
                     </ul>
                 </li>
             </ul>
@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
         <div id="footer_bottom">
             <h3>Prashik Bhimte</h3>
-            <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+            <p>AI/ML & Web Development-Focused B.Tech Student | 3+ Proficiency in Python, JavaScript & Frameworks.</p>
             <hr/>
             <p>Copyright ©2024 All rights reserved</p>
         </div>

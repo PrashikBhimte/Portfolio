@@ -1,15 +1,17 @@
 import React from 'react';
 import "./About.css";
 import color_grid from "../Images/color_grid.png";
+import resume from "./resume.pdf";
 
 export default function About() {
+
   return (
     <div id='about'>
       <div id="about_info">
         <h1>About Me</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida Risus com odo viverra maecenas.
+        <p>Hi there! I'm Prashik Bhimte, a machine learning enthusiast with a passion for building innovative AI applications. With a strong foundation in Python, I've developed a solid understanding of machine learning concepts and have completed several projects in the field.
         </p>
-        <button>Download CV</button>
+        <a id='about_but' href={resume} target='blank'>Download CV</a>
       </div>
       <div id="about_pic">
         <div id="about_pic_img"></div>
