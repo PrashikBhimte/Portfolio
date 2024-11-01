@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import "./Testimonials.css";
 // import quote from "../Images/quote.png";
 import Data from "./testimonials.json";
@@ -13,17 +13,17 @@ export default function Testimonials() {
 
   const turnRight = () => {
     setMid(mid + 1);
-    if (mid == i - 1) {
+    if (mid === i - 1) {
       setMid(0);
     }
-  }
+  };
 
   const turnleft = () => {
     setMid(mid - 1);
-    if (mid == 0) {
+    if (mid === 0) {
       setMid(i - 1);
     }
-  }
+  };
 
   return (
     <div id='testimonials'>
@@ -32,7 +32,10 @@ export default function Testimonials() {
           <button onClick={turnRight}><FaArrowRightLong /></button>
         </div>
         <div id="test_div">
-          <TestimonialBox text={array[mid]['test']}/>
+          <div id="test_swipe">
+            {array.map((key) => {return <TestimonialBox text={key['test']}/>})}
+          </div>
+          {/* <TestimonialBox onSwipedLeft={turnleft} onSwipedRight={turnRight} text={array[mid]['test']}/> */}
         </div>
     </div>
   )
