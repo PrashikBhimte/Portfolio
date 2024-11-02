@@ -4,6 +4,7 @@ import pdf1 from "../pdf/1.pdf";
 import pdf2 from "../pdf/2.pdf";
 import pdf3 from "../pdf/3.pdf";
 import Data from "./projects.json";
+import ProjectBox from './ProjectBox';
 
 export default function Projects() {
 
@@ -20,7 +21,7 @@ export default function Projects() {
             <h1>Some of my awesome stuffs here</h1> 
           </div>
           <div id="list_pro">
-
+            {projects.map((key, i) => {return <ProjectBox name={key['name']} duration={key['duration']} description={key['description']} skills={key['skills']} github={key['github']} report={array[i]} />})}
           </div>
         </div>
     </div>
