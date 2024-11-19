@@ -38,15 +38,11 @@ export default function MainPage() {
       <div className="mainpage_div">
         <About />
       </div>
-      <div className="mainpage_div">
-        <Skills />
-      </div>
+      <Skills />
       <div className="mainpage_div">
         <Education />
       </div>
-      <div className="mainpage_div">
-        <Projects />
-      </div>
+      <Projects />
       <div className="mainpage_div">
         <Certificates />
       </div>

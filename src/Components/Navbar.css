@@ -2,7 +2,7 @@
     width: 100vw;
     height: 70px;
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     top: 0;
     display: flex;
     flex-direction: row;

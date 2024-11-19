@@ -1,3 +1,15 @@
+#projects {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(0deg, #FFF 90%, #001D38 10%);
+}
+
 .pro_h {
     background-color: #001D38;
     color: white;
@@ -5,7 +17,7 @@
 
 #project_con {
     width: 100%;
-    height: calc(100% - 100px);
+    min-height: calc(100% - 100px);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -33,11 +45,11 @@
 }
 
 #list_pro {
-    min-width: 100%;
-    height: calc(100% - 110px);
+    width: 100%;
+    min-height: calc(100% - 110px);
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 50px;

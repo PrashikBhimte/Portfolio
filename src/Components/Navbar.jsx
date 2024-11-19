@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -12,6 +12,26 @@ export default function Navbar() {
     }
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth > 1000) {
+        if (window.scrollY > 10) {
+          document.getElementById('navbar').style.backgroundColor = "#001D38";
+        }
+        else {
+          document.getElementById('navbar').style.backgroundColor = "#001D3800";
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+        window.removeEventListener('scroll', handleScroll);   
+
+    };
+  }, []);
+
   return (
     <div id='navbar'>
         <h1>Prashik</h1>
@@ -20,7 +40,7 @@ export default function Navbar() {
             <li><a onClick={handleClickClose} href='#about'>About</a></li>
             <li><a onClick={handleClickClose} href='#skills'>Skills</a></li>
             <li><a onClick={handleClickClose} href='#education'>Education</a></li>
-            <li><a onClick={handleClickClose} href='#projects'>projects</a></li>
+            <li><a onClick={handleClickClose} href='#projects'>Projects</a></li>
             <li><a onClick={handleClickClose} href='#certificates'>Certificates</a></li>
         </ul>
         <a id='nav_but' href='#footer'>Contact Me</a>
