@@ -47,8 +47,8 @@
 }
 
 #educ_info ul li h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
     margin-left: 10px;
 }
 
@@ -61,11 +61,5 @@
 @media screen and (max-width : 1000px) {
     #side_bar {
         margin-left: 20px;
-    }
-    #educ_info ul li h2 {
-        font-size: 1.5rem;
-    }
-    #educ_info ul li p {
-        font-size: 0.9rem;
     }
 }

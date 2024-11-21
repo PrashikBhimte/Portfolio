@@ -34,7 +34,7 @@
 
 #home_header {
     width: 100%;
-    max-width: 600px;
+    max-width: 900px;
     height: 50%;
     position: absolute;
     top: 0;
@@ -55,11 +55,18 @@
 #home_header h1 {
     margin-bottom: 0;
     font-size: 4rem;
+    font-family: "Bruno Ace", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 #home_header p {
     margin-top: 0;
-    font-size: 2rem;
+    font-size: 3rem;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 #social_links {
@@ -120,19 +127,20 @@
         padding-bottom: 150px;
     }
     #home_header h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
     #home_header p {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
     }
 }
 
 @media screen and (max-width : 600px) {
     #home_header h1 {
-        font-size: 2rem;
+        font-size: 3rem;
+        text-align: left; 
     }
     #home_header p {
-        font-size: 1.1rem;
+        font-size: 2rem;
     }
     #social_links {
         height: 150px;

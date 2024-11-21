@@ -5,7 +5,6 @@ export default function ProjectBox(props) {
 
   let description = props.description;
   let formatted_des = description.split("\n");
-  console.log(formatted_des);
 
   return (
     <div className='project_box'>

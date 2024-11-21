@@ -15,7 +15,7 @@
 }
 
 #footer_header h2, #footer_header p {
-    font-size: 3rem;
+    font-size: 2rem;
     max-width: 600px;
     width: 100%;
     padding: 10px;
@@ -24,7 +24,7 @@
 }
 
 #footer_header p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin: 0;
 }
 
@@ -61,15 +61,17 @@
     border: 2px solid white;
 }
 
-#mid_left h3, #mid_left p {
-    font-size: 2rem;
+#mid_left h3 {
+    font-size: 1.5rem;
     padding: 0;
     color: white;
     margin: 0;
 }
 
 #mid_left p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding: 0;
+    color: white;
     margin: 0;
 }
 
@@ -95,7 +97,7 @@
 }
 
 #footer_bottom p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: center;
 }
 

@@ -5,12 +5,14 @@
 }
 
 .project_box h2 {
-    min-height: 30px;
+    min-height: 60px;
+    font-size: 1.5rem;
 }
 
 .project_box h3 {
     height: 20px;
     padding: 10px 0;
+    font-size: 1.1rem;
 }
 
 .project_desc {
@@ -22,11 +24,12 @@
 
 .project_box p {
     margin: 10px;
+    font-size: 1.1rem;
 }
 
 .project_box p span {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.1rem;
 }
 
 .project_align {
@@ -45,6 +48,6 @@
     align-items: center;
     color: white;
     border: none;
-    font-size: 16px;
+    font-size: 1.1rem;
     text-decoration: none;
 }

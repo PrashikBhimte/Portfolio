@@ -47,12 +47,12 @@
 }
 
 #about_info h1 {
-    font-size: 40px;
+    font-size: 3rem;
     margin: 30px 0px;
 }
 
 #about_info p {
-    font-size: 18px;
+    font-size: 1.1rem;
     margin: 10px 30px;
 }
 
@@ -65,7 +65,7 @@
     align-items: center;
     color: white;
     border: none;
-    font-size: 16px;
+    font-size: 1.1rem;
     margin: 20px 30px;
     text-decoration: none;
 }
@@ -101,6 +101,7 @@
         max-width: 500px;
     }
     #about_info h1 {
-        margin: 30px 10px;
+        font-size: 2rem;
+        margin: 10px;
     }
 }

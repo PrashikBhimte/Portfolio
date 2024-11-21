@@ -15,14 +15,18 @@
 }
 
 .skill_box h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #001D38;
     height: 100px;
 }
 
 .skill_box p {
-    font-size: 1.3rem;
-    color: #888;
+    font-size: 1.5rem;
+    color: #616161;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 @media screen and (max-width : 1400px) {
@@ -35,6 +39,9 @@
 @media screen and (max-width : 800px) {
     .skill_box {
         max-width: 280px;
-        height: 200px;
+        height: auto;
+    }
+    .skill_box h2 {
+        height: auto;
     }
 }
