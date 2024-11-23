@@ -25,7 +25,7 @@ export default function Form() {
   }
 
   const handleSubmit = async () => {
-    await fetch("https://portfolio-server-five-theta.vercel.app", {
+    await fetch("https://prashikbhimte29.pythonanywhere.com/sendmessage", {
       method : "POST",
       headers : {
         'Content-Type': 'application/json'
