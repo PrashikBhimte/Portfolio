@@ -33,7 +33,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div id='navbar'>
+    <div id='navbar' data-aos="fade-down" data-aos-delay="3000">
         <h1>Prashik</h1>
         <ul>
             <li><a onClick={handleClickClose} href='#home'>Home</a></li>
