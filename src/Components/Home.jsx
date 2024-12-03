@@ -13,12 +13,17 @@ export default function Home() {
   var textIndex = 0;
   var word = '';
   var lengthFoWord = 0;
-  const [text, setText] = useState(array[index][textIndex]);
+  const [ isFirstTime, setIsFirstTime ] = useState(true);
+  const [text, setText] = useState('');
 
   useEffect(() => {
     const intervalID = setInterval(() => {
       word = array[index];
       lengthFoWord = word.length;
+      if (isFirstTime) {
+        setText(array[index][textIndex]);
+        setIsFirstTime(false);
+      }
       if (index < 3) {
         const interval = setInterval(() => {
           if (textIndex < lengthFoWord - 1) {
@@ -62,14 +67,14 @@ export default function Home() {
 
   return (
     <div id='home'>
-      <img alt='profile_pic' src={profile_pic} id='profile_pic' />
-      <div id="home_circle"></div>
+      <img data-aos="zoom-in-right" data-aos-delay="3000" alt='profile_pic' src={profile_pic} id='profile_pic' />
+      <div data-aos="zoom-in-left" data-aos-delay="3000" id="home_circle"></div>
       <img alt='grid' src={grid} id='grid' />
       <div id="home_header">
         <h1>{header}</h1>
         <p>{text}</p>
       </div>
-      <div id="social_links">
+      <div id="social_links" data-aos='fade-left' data-aos-delay='3000'>
         <a href='https://www.github.com/PrashikBhimte/' target='blank' ><img src={github} alt="github" /></a>
         <a href='https://www.instagram.com/prashikbhimte29/' target='blank'><img src={instagram} alt='instagram' /></a>
         <a href='https://www.linkedin.com/in/prashikbhimte29/' target='blank'><img src={linkedin} alt="linkedin" /></a>
