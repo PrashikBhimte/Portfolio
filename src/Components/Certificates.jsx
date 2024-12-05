@@ -2,6 +2,7 @@ import React from 'react';
 import "./Certificates.css";
 import certificate1 from "../Images/certifiacte1.jpg";
 import certificate2 from "../Images/certifiacte2.jpg";
+import certificate3 from "../Images/certificate3.jpg";
 
 export default function Certificates() {
 
@@ -11,6 +12,10 @@ export default function Certificates() {
 
   const certi2 = () => {
     document.getElementById("certi_img").style.backgroundImage = `url(${certificate2})`;
+  }
+
+  const certi3 = () => {
+    document.getElementById("certi_img").style.backgroundImage = `url(${certificate3})`;
   }
 
   return (
@@ -23,6 +28,7 @@ export default function Certificates() {
           <div id="all_certi">
             <img onClick={certi1} src={certificate1} alt={certificate1} />
             <img onClick={certi2} src={certificate2} alt={certificate2} />
+            <img onClick={certi3} src={certificate3} alt={certificate3} />
           </div>
         </div>
         <div id="cert_back">
