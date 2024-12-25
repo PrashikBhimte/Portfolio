@@ -3,6 +3,8 @@ import "./Certificates.css";
 import certificate1 from "../Images/certifiacte1.jpg";
 import certificate2 from "../Images/certifiacte2.jpg";
 import certificate3 from "../Images/certificate3.jpg";
+import certificate4 from "../Images/certificate4.png";
+import certificate5 from "../Images/certificate5.png";
 
 export default function Certificates() {
 
@@ -18,6 +20,14 @@ export default function Certificates() {
     document.getElementById("certi_img").style.backgroundImage = `url(${certificate3})`;
   }
 
+  const certi4 = () => {
+    document.getElementById("certi_img").style.backgroundImage = `url(${certificate4})`;
+  }
+
+  const certi5 = () => {
+    document.getElementById("certi_img").style.backgroundImage = `url(${certificate5})`;
+  }
+
   return (
     <div id='certificates'>
         <div className="heading">
@@ -26,9 +36,11 @@ export default function Certificates() {
         <div id="certi_con">
           <div id="certi_img"></div>
           <div id="all_certi">
+            <img onClick={certi5} src={certificate5} alt={certificate5} />
             <img onClick={certi1} src={certificate1} alt={certificate1} />
             <img onClick={certi2} src={certificate2} alt={certificate2} />
             <img onClick={certi3} src={certificate3} alt={certificate3} />
+            <img onClick={certi4} src={certificate4} alt={certificate4} />
           </div>
         </div>
         <div id="cert_back">
