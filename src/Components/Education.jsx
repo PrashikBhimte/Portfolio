@@ -15,19 +15,16 @@ export default function Education() {
                         <h2>Shri Guru Gobind Singhji Institute of Engineering and Technology, Nanded</h2>
                         <p>B.tech in Computer Science and engineering</p>
                         <p>Nov 2022 - June 2026</p>
-                        <p>GPA: 8.2/10</p>
                     </li>
                     <li>
                         <h2>Shri Maharshi Vidya Mandir English School, Chandrapur</h2>
                         <p>12th in Science</p>
                         <p>June 2021 - May 2022</p>
-                        <p>Percentage: 87.00</p>
                     </li>
                     <li>
                         <h2>St. Michale English Medium School, Chandrapur</h2>
                         <p>10th</p>
-                        <p>June 2020 - May 2021</p>
-                        <p>Percentage: 89.20</p>
+                        <p>June 2019 - May 2020</p>
                     </li>
                 </ul>
             </div>
