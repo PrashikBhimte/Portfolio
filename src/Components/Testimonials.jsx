@@ -37,3 +37,20 @@ export default function Testimonials() {
     </div>
   )
 }
+
+
+// {
+        //     "testimonial" : "Hi there! I'm Prashik Bhimte, a machine learning enthusiast with a passion for building innovative AI applications. With a strong foundation in Python, I've developed a solid understanding of machine learning concepts and have completed several projects in the field.",
+        //     "name" : "yash",
+        //     "relation" : "Owner"
+        // },
+        // {
+        //     "testimonial" : "Hi there! I'm Prashik Bhimte, a machine learning enthusiast with a passion for building innovative AI applications. With a strong foundation in Python, I've developed a solid understanding of machine learning concepts and have completed several projects in the field.",
+        //     "name" : "Pratik",
+        //     "relation" : "Owner"
+        // },
+        // {
+        //     "testimonial" : "Hi there! I'm Prashik Bhimte, a machine learning enthusiast with a passion for building innovative AI applications. With a strong foundation in Python, I've developed a solid understanding of machine learning concepts and have completed several projects in the field.",
+        //     "name" : "rahul",
+        //     "relation" : "Owner"
+        // }
