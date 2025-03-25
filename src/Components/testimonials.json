@@ -4,6 +4,11 @@
             "testimonial" : "I have worked closely with Prashik, and I can confidently say he is one of the developers you can trust. His mastery of the MERN stack is very great, and his growing expertise in machine learning is indeed impressive. If you need someone who combines strong technical skills with a passion for innovation, Prashik is the perfect choice.",
             "name" : "Pranav Dhumale",
             "relation" : "Hackthon partner"
+        },
+        {
+            "testimonial" : "Parshik is a highly skilled and versatile individual with expertise in web development and machine learning. Proficient in Python and programming, they bring a creative and innovative mindset to every project they undertake. Their practical knowledge of robotics further highlights their technical acumen and ability to excel in diverse domains.",
+            "name" : "Samyak Borkar",
+            "relation" : "Hackthon partner"
         }
     ]
 }

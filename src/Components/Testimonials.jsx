@@ -1,56 +1,36 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import "./Testimonials.css";
-// import quote from "../Images/quote.png";
 import Data from "./testimonials.json";
 import TestimonialBox from './TestimonialBox';
-import pic from "../Images/pranav.jpg";
+import pic1 from "../Images/pranav.jpg";
+import pic2 from "../Images/saymak.jpg"
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Testimonials() {
 
-  var array = Data.Data;
-  const total_count = array.length;
-  var count = 0;
+  const array = Data.Data;
+  const pics = [pic1, pic2]
 
-  // useEffect(() => {
-
-    // setInterval(() => {
-    //   const element = document.getElementById('test_div');
-    //   if (count < total_count) {
-    //     element.scrollLeft += 500;
-    //     array.push(array.shift());
-    //     count++;
-    //   }
-    //   else {
-    //     element.scrollLeft -= total_count * 500;
-    //     count = 0;
-    //     console.log(array);
-    //   }
-    // }, 2000);
-
-  // }, []);
+  const settings = {
+    className : "test_div",
+    dots : false, 
+    infinite : true,
+    speed : 500,
+    autoplay : true,
+    autoplayspeed : 300,
+    slidesToShow: 1,
+    swipeToSlide: true,
+    cssEase : "linear",
+    arrows : false
+  };
 
   return (
     <div id='testimonials'>
-      <div className="test_div" id='test_div' >
-        {array.map((key) => { return <TestimonialBox testimonial={key['testimonial']} name={key['name']} relation={key['relation']} pic={pic} /> })}
-      </div>
+      <Slider {...settings}>
+        {array.map((key, i) => { return <TestimonialBox testimonial={key['testimonial']} name={key['name']} relation={key['relation']} pic={pics[i]} /> })}
+      </Slider>
     </div>
   )
 }
-
-
-// {
-        //     "testimonial" : "Hi there! I'm Prashik Bhimte, a machine learning enthusiast with a passion for building innovative AI applications. With a strong foundation in Python, I've developed a solid understanding of machine learning concepts and have completed several projects in the field.",
-        //     "name" : "yash",
-        //     "relation" : "Owner"
-        // },
-        // {
-        //     "testimonial" : "Hi there! I'm Prashik Bhimte, a machine learning enthusiast with a passion for building innovative AI applications. With a strong foundation in Python, I've developed a solid understanding of machine learning concepts and have completed several projects in the field.",
-        //     "name" : "Pratik",
-        //     "relation" : "Owner"
-        // },
-        // {
-        //     "testimonial" : "Hi there! I'm Prashik Bhimte, a machine learning enthusiast with a passion for building innovative AI applications. With a strong foundation in Python, I've developed a solid understanding of machine learning concepts and have completed several projects in the field.",
-        //     "name" : "rahul",
-        //     "relation" : "Owner"
-        // }
