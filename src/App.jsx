@@ -1,21 +1,16 @@
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import MainPage from './Components/MainPage';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
-function App() {
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
-  
+export default function App() {
   return (
-    <Routes>
-      <Route path='/' element={<MainPage />} />
-    </Routes>
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
   );
 }
-
-export default App;

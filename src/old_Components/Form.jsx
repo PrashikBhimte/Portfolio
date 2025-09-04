@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Form.css";
 
 export default function Form() {
 
@@ -50,15 +49,17 @@ export default function Form() {
   };
 
   return (
-    <div id="form">
-      <div>
+    <div className="w-full h-full flex flex-col justify-center items-center">
+      <div className="w-full h-full flex flex-col sm:flex-row justify-between items-center p-0 m-0">
         <input
+          className="md:w-[47.5%] w-full h-12 bg-transparent border-2 border-white text-white my-5 mx-0 text-xl px-2.5 box-border"
           type="text"
           placeholder="Your Name"
           value={name}
           onChange={handleChangeName}
         />
         <input
+          className="md:w-[47.5%] w-full h-12 bg-transparent border-2 border-white text-white my-5 mx-0 text-xl px-2.5 box-border"
           type="text"
           placeholder="Your Email"
           value={email}
@@ -66,17 +67,19 @@ export default function Form() {
         />
       </div>
       <input
+        className="w-full h-12 bg-transparent border-2 border-white text-white my-5 mx-0 text-xl px-2.5 box-border"
         type="text"
         placeholder="Subject"
         value={subject}
         onChange={handleChangeSubject}
       />
       <textarea
+        className="w-full min-h-52 bg-transparent border-2 border-white text-white my-5 text-xl p-2.5 box-border"
         placeholder="Message"
         value={message}
         onChange={handleChangeMessage}
       />
-      <button onClick={handleSubmit}>Send Message</button>
+      <button className="w-36 h-12 bg-[_#615CFD] flex justify-center items-center text-white text-xm border-none my-5 hover:scale-105 active:scale-95" onClick={handleSubmit}>Send Message</button>
     </div>
   );
 }

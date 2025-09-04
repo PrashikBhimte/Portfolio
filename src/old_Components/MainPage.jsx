@@ -1,5 +1,4 @@
 import React from 'react';
-import "./MainPage.css";
 import Home from './Home';
 import About from './About';
 import Navbar from './Navbar';
@@ -28,25 +27,25 @@ export default function MainPage() {
   }
 
   return (
-    <div id="mainpage">
-      <RiMenu4Fill id='menu_open' onClick={handleClickOpen}/>
-      <RiCloseLargeFill id='menu_close'onClick={handleClickClose}/>
+    <div className="w-full h-full m-0 p-0">
+      <RiMenu4Fill className='text-4xl z-[101] absolute top-7 right-7 text-white block lg:hidden' onClick={handleClickOpen}/>
+      <RiCloseLargeFill className='z-[101] text-4xl absolute top-7 right-7 text-white hidden'onClick={handleClickClose}/>
       <Navbar />
-      <div className="mainpage_div">
+      <div className="w-screen h-screen relative overflow-hidden">
         <Home />
       </div>
-      <div className="mainpage_div">
+      <div className="w-screen h-screen relative overflow-hidden">
         <About />
       </div>
       <Skills />
-      <div className="mainpage_div">
+      <div className="w-screen h-screen relative overflow-hidden">
         <Education />
       </div>
       <Projects />
-      <div className="mainpage_div">
+      <div className="w-screen h-screen relative overflow-hidden">
         <Certificates />
       </div>
-      <div className="mainpage_test_div">
+      <div className="relative">
         <Testimonials />
       </div>
       <Footer />
