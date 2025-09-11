@@ -4,7 +4,9 @@ import { FaExternalLinkAlt, FaGithub, FaTimes } from 'react-icons/fa';
 const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
-  const { title, description, technologies, liveDemo, sourceCode, image, report } = project;
+  const { title, description, technologies, liveDemo, link, image, report } = project;
+
+  console.log('ProjectModal render:', project.link);
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
@@ -33,7 +35,7 @@ const ProjectModal = ({ project, onClose }) => {
                   <FaExternalLinkAlt /> <span>Live Demo</span>
                 </a>
               )}
-              <a href={sourceCode} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-text-dark hover:text-accent transition-colors">
+              <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-text-dark hover:text-accent transition-colors">
                 <FaGithub /> <span>View Source</span>
               </a>
             </div>

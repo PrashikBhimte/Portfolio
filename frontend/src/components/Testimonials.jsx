@@ -20,7 +20,7 @@ const Testimonials = () => {
     <section id="testimonials" className="py-16">
       <div className="container mx-auto px-6 md:px-12">
         <h2 className="text-4xl font-bold text-center text-text-light mb-12">Testimonials</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           {testimonials.length > 0 ? (
             testimonials.map((testimonial, index) => (
               <div key={index} className="p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">

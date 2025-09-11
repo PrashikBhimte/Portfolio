@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Hero = () => {
   const [hero, setHero] = useState(null);
@@ -17,19 +17,141 @@ const Hero = () => {
     fetchHero();
   }, []);
 
-  // A simple SVG to create an abstract background pattern
-  const AbstractBackground = () => (
-    <svg width="100%" height="100%" className="absolute inset-0 z-0 opacity-10">
-      <defs>
-        <pattern id="pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-          <circle cx="10" cy="10" r="1" fill="#64ffda" />
-          <path d="M 10 10 L 40 40" stroke="#64ffda" strokeWidth="0.5" />
-          <circle cx="40" cy="40" r="1" fill="#64ffda" />
-        </pattern>
-      </defs>
-      <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern)" />
-    </svg>
-  );
+  const AbstractBackground = () => {
+    const svgRef = useRef(null);
+    const circlesRef = useRef([]);
+    const linesRef = useRef([]);
+    const mouse = useRef({ x: 0, y: 0, radius: 100 }); // Mouse position and interaction radius
+
+    useEffect(() => {
+      const svg = svgRef.current;
+      if (!svg) return;
+
+      const circles = [];
+      const lines = [];
+
+      const createAnimatedCircle = (x, y) => {
+        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("cx", x);
+        circle.setAttribute("cy", y);
+        circle.setAttribute("r", "1");
+        circle.setAttribute("fill", "#64ffda");
+        circle.style.opacity = 0.3; // Increased constant opacity
+        svg.appendChild(circle);
+        circles.push({ element: circle, originalR: 1, x, y });
+      };
+
+      const createAnimatedLine = (x1, y1, x2, y2) => {
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", x1);
+        line.setAttribute("y1", y1);
+        line.setAttribute("x2", x2);
+        line.setAttribute("y2", y2);
+        line.setAttribute("stroke", "#64ffda");
+        line.setAttribute("stroke-width", "0.5");
+        line.style.opacity = 0.3; // Increased constant opacity
+        svg.appendChild(line);
+        lines.push({ element: line, originalStrokeWidth: 0.5, x1, y1, x2, y2 });
+      };
+
+      const gridSize = 50;
+      const numRows = Math.ceil(window.innerHeight / gridSize);
+      const numCols = Math.ceil(window.innerWidth / gridSize);
+
+      for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+          const x = j * gridSize + gridSize / 2;
+          const y = i * gridSize + gridSize / 2;
+
+          createAnimatedCircle(x, y);
+
+          if (j < numCols - 1) {
+            createAnimatedLine(x, y, x + gridSize, y);
+          }
+          if (i < numRows - 1) {
+            createAnimatedLine(x, y, x, y + gridSize);
+          }
+        }
+      }
+
+      circlesRef.current = circles;
+      linesRef.current = lines;
+
+      let animationFrameId = null;
+
+      const handleMouseMove = (e) => {
+        mouse.current.x = e.clientX;
+        mouse.current.y = e.clientY;
+
+        if (!animationFrameId) {
+          animationFrameId = requestAnimationFrame(updateElements);
+        }
+      };
+
+      const updateElements = () => {
+        circlesRef.current.forEach(circle => {
+          const dist = Math.sqrt(Math.pow(mouse.current.x - circle.x, 2) + Math.pow(mouse.current.y - circle.y, 2));
+          if (dist < mouse.current.radius) {
+            const scale = 1 + (1 - dist / mouse.current.radius) * 2;
+            circle.element.setAttribute("r", circle.originalR * scale);
+            circle.element.style.fill = `rgba(100, 255, 218, ${Math.min(1, (1 - dist / mouse.current.radius) * 1.5)})`; // Increased opacity for highlight
+          } else {
+            circle.element.setAttribute("r", circle.originalR);
+            circle.element.style.fill = "#64ffda";
+          }
+        });
+
+        linesRef.current.forEach(line => {
+          const midX = (line.x1 + line.x2) / 2;
+          const midY = (line.y1 + line.y2) / 2;
+          const dist = Math.sqrt(Math.pow(mouse.current.x - midX, 2) + Math.pow(mouse.current.y - midY, 2));
+          if (dist < mouse.current.radius) {
+            const width = line.originalStrokeWidth + (1 - dist / mouse.current.radius) * 2;
+            line.element.setAttribute("stroke-width", width);
+            line.element.style.stroke = `rgba(100, 255, 218, ${Math.min(1, (1 - dist / mouse.current.radius) * 1.5)})`; // Increased opacity for highlight
+          } else {
+            line.element.setAttribute("stroke-width", line.originalStrokeWidth);
+            line.element.style.stroke = "#64ffda";
+          }
+        });
+
+        animationFrameId = null; // Reset for the next frame
+      };
+
+      const handleMouseLeave = () => {
+        circlesRef.current.forEach(circle => {
+          circle.element.setAttribute("r", circle.originalR);
+          circle.element.style.fill = "#64ffda";
+        });
+        linesRef.current.forEach(line => {
+          line.element.setAttribute("stroke-width", line.originalStrokeWidth);
+          line.element.style.stroke = "#64ffda";
+        });
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+      };
+
+      svg.addEventListener('mousemove', handleMouseMove);
+      svg.addEventListener('mouseleave', handleMouseLeave);
+
+      return () => {
+        svg.removeEventListener('mousemove', handleMouseMove);
+        svg.removeEventListener('mouseleave', handleMouseLeave);
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+        }
+        while (svg.firstChild) {
+          svg.removeChild(svg.firstChild);
+        }
+      };
+    }, []);
+
+    return (
+      <svg ref={svgRef} width="100%" height="100%" className="absolute inset-0 z-0 opacity-50"></svg>
+    );
+  };
 
   if (!hero) {
     return <div>Loading...</div>;

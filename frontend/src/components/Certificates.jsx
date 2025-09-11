@@ -24,7 +24,7 @@ const Certificates = () => {
           {certificates.length > 0 ? (
             certificates.map((cert, index) => (
               <div key={index} className="p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <h3 className="text-2xl font-semibold text-text-dark">{cert.title}</h3>
+                <h3 className="text-xl font-semibold text-text-dark">{cert.title}</h3>
                 <p className="text-xl text-blue-600 mt-2">{cert.issuer}</p>
                 <p className="text-text-dark mt-1">{cert.date}</p>
                 {cert.link && (

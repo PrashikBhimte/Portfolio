@@ -4,6 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@keyframes data-flow {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(100% + 130px)); /* 8px is the width of the data packet */
+  }
+}
+
+.animate-data-flow {
+  animation: data-flow 3s linear infinite; /* Default duration, overridden by inline style */
+}
+
 html {
   scroll-behavior: smooth;
 }
