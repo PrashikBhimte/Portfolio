@@ -2,12 +2,12 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 
 const router = express.Router();
-const jwtSecret = 'your-secret-key'; // You should use a more secure secret in a real application
+const jwtSecret = process.env.JWT_SECRET;
 
 // Hardcoded credentials (for demonstration purposes)
 const credentials = {
-  username: 'admin',
-  password: 'password'
+  username: process.env.ADMIN_USERNAME,
+  password: process.env.ADMIN_PASSWORD
 };
 
 // Middleware to protect routes

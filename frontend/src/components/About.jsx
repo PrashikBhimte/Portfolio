@@ -8,7 +8,7 @@ const About = () => {
   useEffect(() => {
     const fetchAbout = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/about');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/about`);
         const data = await response.json();
         setAbout(data);
       } catch (error) {

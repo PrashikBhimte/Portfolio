@@ -6,7 +6,7 @@ const Experience = () => {
   useEffect(() => {
     const fetchExperience = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/experience');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/experience`);
         const data = await response.json();
         setExperiences(data);
         console.log(data);

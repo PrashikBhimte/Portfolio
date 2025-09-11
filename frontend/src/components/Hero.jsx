@@ -6,7 +6,7 @@ const Hero = () => {
   useEffect(() => {
     const fetchHero = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/hero');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/hero`);
         const data = await response.json();
         setHero(data);
       } catch (error) {

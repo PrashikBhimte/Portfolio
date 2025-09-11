@@ -6,7 +6,7 @@ const Contact = () => {
   useEffect(() => {
     const fetchContact = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/contact');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`);
         const data = await response.json();
         setContact(data);
       } catch (error) {
@@ -24,13 +24,13 @@ const Contact = () => {
           <p className="text-lg text-text-dark text-center mb-6">Feel free to reach out to me through the following channels:</p>
           <div className="space-y-4 text-center">
             {contact.email && (
-              <p className="text-xl text-blue-600"><i className="fas fa-envelope mr-2"></i> {contact.email}</p>
+              <p className="text-2xs text-blue-600"><i className="fas fa-envelope mr-2"></i> {contact.email}</p>
             )}
             {contact.phone && (
-              <p className="text-xl text-blue-600"><i className="fas fa-phone mr-2"></i> {contact.phone}</p>
+              <p className="text-2xs text-blue-600"><i className="fas fa-phone mr-2"></i> {contact.phone}</p>
             )}
             {contact.address && (
-              <p className="text-xl text-blue-600"><i className="fas fa-map-marker-alt mr-2"></i> {contact.address}</p>
+              <p className="text-2xs text-blue-600"><i className="fas fa-map-marker-alt mr-2"></i> {contact.address}</p>
             )}
             {!contact.email && !contact.phone && !contact.address && (
               <p className="text-text-dark">Contact information not available.</p>

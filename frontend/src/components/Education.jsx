@@ -6,7 +6,7 @@ const Education = () => {
   useEffect(() => {
     const fetchEducation = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/education');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/education`);
         const data = await response.json();
         setEducation(Array.isArray(data) ? data : []);
       } catch (error) {

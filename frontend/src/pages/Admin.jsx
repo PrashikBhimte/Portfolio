@@ -12,6 +12,10 @@ const Admin = () => {
   const [about, setAbout] = useState({ title: '', description: '' });
   const [projects, setProjects] = useState([]);
   const [newProject, setNewProject] = useState({ title: '', description: '', imageUrl: '', link: '', technologies: '' });
+  const [newExperience, setNewExperience] = useState({ title: '', company: '', date: '', description: '' });
+  const [newEducation, setNewEducation] = useState({ institution: '', degree: '', date: '', description: '' });
+  const [newCertificate, setNewCertificate] = useState({ title: '', issuer: '', date: '', link: '' });
+  const [newTestimonial, setNewTestimonial] = useState({ name: '', feedback: '' });
   const [experiences, setExperiences] = useState([]);
   const [education, setEducation] = useState([]);
   const [certificates, setCertificates] = useState([]);
@@ -24,14 +28,14 @@ const Admin = () => {
     const fetchData = async () => {
       try {
         const [heroRes, aboutRes, projectsRes, experienceRes, educationRes, certificatesRes, testimonialsRes, contactRes] = await Promise.all([
-          fetch('http://localhost:3001/api/hero'),
-          fetch('http://localhost:3001/api/about'),
-          fetch('http://localhost:3001/api/projects'),
-          fetch('http://localhost:3001/api/experience'),
-          fetch('http://localhost:3001/api/education'),
-          fetch('http://localhost:3001/api/certificates'),
-          fetch('http://localhost:3001/api/testimonials'),
-          fetch('http://localhost:3001/api/contact'),
+          fetch(`${import.meta.env.VITE_API_URL}/api/hero`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/about`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/projects`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/experience`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/education`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/certificates`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/testimonials`),
+          fetch(`${import.meta.env.VITE_API_URL}/api/contact`),
         ]);
         const heroData = await heroRes.json();
         const aboutData = await aboutRes.json();
@@ -66,7 +70,7 @@ const Admin = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await fetch('http://localhost:3001/api/hero', {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/hero`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +92,7 @@ const Admin = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await fetch('http://localhost:3001/api/about', {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/about`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -119,7 +123,7 @@ const Admin = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await fetch(`http://localhost:3001/api/projects/${id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/projects/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -136,7 +140,7 @@ const Admin = () => {
   const handleProjectDelete = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await fetch(`http://localhost:3001/api/projects/${id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/projects/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -157,7 +161,7 @@ const Admin = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3001/api/projects', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -174,11 +178,215 @@ const Admin = () => {
     }
   };
 
+  const handleNewExperienceChange = (e) => {
+    setNewExperience({ ...newExperience, [e.target.name]: e.target.value });
+  };
+
+  const handleNewExperienceSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const token = localStorage.getItem('token');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/experience`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(newExperience),
+      });
+      const data = await response.json();
+      setExperiences([...experiences, data]);
+      setNewExperience({ title: '', company: '', date: '', description: '' });
+      alert('Experience added!');
+    } catch (error) {
+      console.error('Failed to add experience', error);
+    }
+  };
+
+  const handleExperienceChange = (e, id) => {
+    const { name, value } = e.target;
+    const updatedExperiences = experiences.map(exp =>
+      exp.id === id ? { ...exp, [name]: value } : exp
+    );
+    setExperiences(updatedExperiences);
+  };
+
+  const handleExperienceUpdate = async (e, id) => {
+    e.preventDefault();
+    const experienceToUpdate = experiences.find(exp => exp.id === id);
+    try {
+      const token = localStorage.getItem('token');
+      await fetch(`${import.meta.env.VITE_API_URL}/api/experience/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(experienceToUpdate),
+      });
+      alert('Experience updated!');
+    } catch (error) {
+      console.error('Failed to update experience', error);
+    }
+  };
+
+  const handleExperienceDelete = async (id) => {
+    try {
+      const token = localStorage.getItem('token');
+      await fetch(`${import.meta.env.VITE_API_URL}/api/experience/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      setExperiences(experiences.filter(exp => exp.id !== id));
+      alert('Experience deleted!');
+    } catch (error) {
+      console.error('Failed to delete experience', error);
+    }
+  };
+
+  const handleEducationChange = (e, id) => {
+    const { name, value } = e.target;
+    const updatedEducation = education.map(edu =>
+      edu.id === id ? { ...edu, [name]: value } : edu
+    );
+    setEducation(updatedEducation);
+  };
+
+  const handleEducationUpdate = async (e, id) => {
+    e.preventDefault();
+    const educationToUpdate = education.find(edu => edu.id === id);
+    try {
+      const token = localStorage.getItem('token');
+      await fetch(`${import.meta.env.VITE_API_URL}/api/education/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(educationToUpdate),
+      });
+      alert('Education updated!');
+    } catch (error) {
+      console.error('Failed to update education', error);
+    }
+  };
+
+  const handleEducationDelete = async (id) => {
+    try {
+      const token = localStorage.getItem('token');
+      await fetch(`${import.meta.env.VITE_API_URL}/api/education/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      setEducation(education.filter(edu => edu.id !== id));
+      alert('Education deleted!');
+    } catch (error) {
+      console.error('Failed to delete education', error);
+    }
+  };
+
+  const handleNewEducationChange = (e) => {
+    setNewEducation({ ...newEducation, [e.target.name]: e.target.value });
+  };
+
+  const handleNewEducationSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const token = localStorage.getItem('token');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/education`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(newEducation),
+      });
+      const data = await response.json();
+      setEducation([...education, data]);
+      setNewEducation({ institution: '', degree: '', date: '', description: '' });
+      alert('Education added!');
+    } catch (error) {
+      console.error('Failed to add education', error);
+    }
+  };
+
+  const handleTestimonialChange = (e, id) => {
+    const { name, value } = e.target;
+    const updatedTestimonials = testimonials.map(t =>
+      t.id === id ? { ...t, [name]: value } : t
+    );
+    setTestimonials(updatedTestimonials);
+  };
+
+  const handleTestimonialUpdate = async (e, id) => {
+    e.preventDefault();
+    const testimonialToUpdate = testimonials.find(t => t.id === id);
+    try {
+      const token = localStorage.getItem('token');
+      await fetch(`${import.meta.env.VITE_API_URL}/api/testimonials/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(testimonialToUpdate),
+      });
+      alert('Testimonial updated!');
+    } catch (error) {
+      console.error('Failed to update testimonial', error);
+    }
+  };
+
+  const handleTestimonialDelete = async (id) => {
+    try {
+      const token = localStorage.getItem('token');
+      await fetch(`${import.meta.env.VITE_API_URL}/api/testimonials/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      setTestimonials(testimonials.filter(t => t.id !== id));
+      alert('Testimonial deleted!');
+    } catch (error) {
+      console.error('Failed to delete testimonial', error);
+    }
+  };
+
+  const handleNewTestimonialChange = (e) => {
+    setNewTestimonial({ ...newTestimonial, [e.target.name]: e.target.value });
+  };
+
+  const handleNewTestimonialSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const token = localStorage.getItem('token');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/testimonials`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(newTestimonial),
+      });
+      const data = await response.json();
+      setTestimonials([...testimonials, data]);
+      setNewTestimonial({ name: '', feedback: '' });
+      alert('Testimonial added!');
+    } catch (error) {
+      console.error('Failed to add testimonial', error);
+    }
+  };
+
   const handleEducationSubmit = async (e) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await fetch('http://localhost:3001/api/education', {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/education`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -192,21 +400,71 @@ const Admin = () => {
     }
   };
 
-  const handleCertificatesSubmit = async (e) => {
+  const handleNewCertificateChange = (e) => {
+    setNewCertificate({ ...newCertificate, [e.target.name]: e.target.value });
+  };
+
+  const handleNewCertificateSubmit = async (e) => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await fetch('http://localhost:3001/api/certificates', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/certificates`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(newCertificate),
+      });
+      const data = await response.json();
+      setCertificates([...certificates, data]);
+      setNewCertificate({ title: '', issuer: '', date: '', link: '' });
+      alert('Certificate added!');
+    } catch (error) {
+      console.error('Failed to add certificate', error);
+    }
+  };
+
+  const handleCertificateChange = (e, id) => {
+    const { name, value } = e.target;
+    const updatedCertificates = certificates.map(cert =>
+      cert.id === id ? { ...cert, [name]: value } : cert
+    );
+    setCertificates(updatedCertificates);
+  };
+
+  const handleCertificateUpdate = async (e, id) => {
+    e.preventDefault();
+    const certificateToUpdate = certificates.find(cert => cert.id === id);
+    try {
+      const token = localStorage.getItem('token');
+      await fetch(`${import.meta.env.VITE_API_URL}/api/certificates/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
         },
-        body: JSON.stringify(certificates),
+        body: JSON.stringify(certificateToUpdate),
       });
-      alert('Certificates section updated!');
+      alert('Certificate updated!');
     } catch (error) {
-      console.error('Failed to update certificates data', error);
+      console.error('Failed to update certificate', error);
+    }
+  };
+
+  const handleCertificateDelete = async (id) => {
+    try {
+      const token = localStorage.getItem('token');
+      await fetch(`${import.meta.env.VITE_API_URL}/api/certificates/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      setCertificates(certificates.filter(cert => cert.id !== id));
+      alert('Certificate deleted!');
+    } catch (error) {
+      console.error('Failed to delete certificate', error);
     }
   };
 
@@ -214,7 +472,7 @@ const Admin = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await fetch('http://localhost:3001/api/testimonials', {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/testimonials`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -232,7 +490,7 @@ const Admin = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await fetch('http://localhost:3001/api/contact', {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -248,7 +506,7 @@ const Admin = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    navigate('/login');
+    navigate('/');
   };
 
   const renderSection = () => {
@@ -357,13 +615,57 @@ const Admin = () => {
       </div>
         );
       case 'Experience':
-        return <ExperienceForm experiences={experiences} setExperiences={setExperiences} />;
+        return (
+          <ExperienceForm
+            experiences={experiences}
+            newExperience={newExperience}
+            handleExperienceChange={handleExperienceChange}
+            handleExperienceUpdate={handleExperienceUpdate}
+            handleExperienceDelete={handleExperienceDelete}
+            handleNewExperienceChange={handleNewExperienceChange}
+            handleNewExperienceSubmit={handleNewExperienceSubmit}
+            setExperiences={setExperiences}
+          />
+        );
       case 'Education':
-        return <EducationForm education={education} setEducation={setEducation} handleEducationSubmit={handleEducationSubmit} />;
+        return (
+          <EducationForm
+            education={education}
+            newEducation={newEducation}
+            handleEducationChange={handleEducationChange}
+            handleEducationUpdate={handleEducationUpdate}
+            handleEducationDelete={handleEducationDelete}
+            handleNewEducationChange={handleNewEducationChange}
+            handleNewEducationSubmit={handleNewEducationSubmit}
+            setEducation={setEducation}
+          />
+        );
       case 'Certificates':
-        return <CertificatesForm certificates={certificates} setCertificates={setCertificates} handleCertificatesSubmit={handleCertificatesSubmit} />;
+        return (
+          <CertificatesForm
+            certificates={certificates}
+            newCertificate={newCertificate}
+            handleCertificateChange={handleCertificateChange}
+            handleCertificateUpdate={handleCertificateUpdate}
+            handleCertificateDelete={handleCertificateDelete}
+            handleNewCertificateChange={handleNewCertificateChange}
+            handleNewCertificateSubmit={handleNewCertificateSubmit}
+            setCertificates={setCertificates}
+          />
+        );
       case 'Testimonials':
-        return <TestimonialsForm testimonials={testimonials} setTestimonials={setTestimonials} handleTestimonialsSubmit={handleTestimonialsSubmit} />;
+        return (
+          <TestimonialsForm
+            testimonials={testimonials}
+            newTestimonial={newTestimonial}
+            handleTestimonialChange={handleTestimonialChange}
+            handleTestimonialUpdate={handleTestimonialUpdate}
+            handleTestimonialDelete={handleTestimonialDelete}
+            handleNewTestimonialChange={handleNewTestimonialChange}
+            handleNewTestimonialSubmit={handleNewTestimonialSubmit}
+            setTestimonials={setTestimonials}
+          />
+        );
       case 'Contact':
         return <ContactForm contact={contact} setContact={setContact} handleContactSubmit={handleContactSubmit} />;
       default:

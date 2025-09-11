@@ -6,7 +6,7 @@ const Testimonials = () => {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/testimonials');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/testimonials`);
         const data = await response.json();
         setTestimonials(Array.isArray(data) ? data : []);
       } catch (error) {
