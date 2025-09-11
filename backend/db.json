@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "title": "Hi, I'm Prashik Bhimte",
+    "subtitle": "Machine Learning Engineer & Data Scientist"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Hello! I'm Prashik Bhimte, a passionate and results-oriented software engineer with a strong foundation in computer science and a drive to create innovative and impactful solutions. I thrive in collaborative environments and enjoy tackling complex challenges. My goal is to leverage my skills and experience to contribute to meaningful projects and continuously grow as a developer."
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Project 1",
+      "description": "This is the first project.",
+      "imageUrl": "https://via.placeholder.com/300",
+      "link": "#",
+      "technologies": ["React", "Node.js", "Express", "MongoDB"]
+    },
+    {
+      "id": 2,
+      "title": "Project 2",
+      "description": "This is the second project.",
+      "imageUrl": "https://via.placeholder.com/300",
+      "link": "#",
+      "technologies": ["Python", "Flask", "SQLAlchemy"]
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "title": "Software Engineer",
+      "company": "Google",
+      "date": "2023-Present",
+      "description": "Working on cool stuff."
+    },
+    {
+      "id": 2,
+      "title": "Software Engineer Intern",
+      "company": "Microsoft",
+      "date": "2022-2023",
+      "description": "Learned a lot."
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "University of XYZ",
+      "degree": "Bachelor of Science in Computer Science",
+      "date": "2018-2022",
+      "description": "Graduated with honors."
+    }
+  ],
+  "certificates": [
+    {
+      "id": 1,
+      "title": "Certified Kubernetes Application Developer (CKAD)",
+      "issuer": "The Linux Foundation",
+      "date": "2023",
+      "link": "#"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "quote": "Prashik is a great developer!",
+      "author": "John Doe, CEO of ABC Inc."
+    }
+  ],
+  "contact": {
+    "title": "Get In Touch",
+    "description": "My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!"
+  }
+}
