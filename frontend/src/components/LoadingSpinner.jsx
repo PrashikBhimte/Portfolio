@@ -106,21 +106,21 @@ const LoadingSpinner = () => {
           {/* Input Layer Neurons */}
           {inputNeurons.map((pos, i) => (
             <div key={`input-${i}`} className="absolute" style={{ left: `${pos.x}px`, top: `${pos.y}px` }}>
-              <Neuron color="border-2 border-accent bg-[#0a192f]" />
+              <Neuron color="border-2 border-accent bg-surface" />
             </div>
           ))}
 
           {/* Hidden Layer Neurons */}
           {hiddenNeurons.map((pos, i) => (
             <div key={`hidden-${i}`} className="absolute" style={{ left: `${pos.x}px`, top: `${pos.y}px` }}>
-              <Neuron color="border-2 border-accent bg-[#0a192f]" />
+              <Neuron color="border-2 border-accent bg-surface" />
             </div>
           ))}
 
           {/* Output Layer Neurons */}
           {outputNeurons.map((pos, i) => (
             <div key={`output-${i}`} className="absolute" style={{ left: `${pos.x}px`, top: `${pos.y}px` }}>
-              <Neuron color="border-2 border-accent bg-[#0a192f]" />
+              <Neuron color="border-2 border-accent bg-surface" />
             </div>
           ))}
         </div>

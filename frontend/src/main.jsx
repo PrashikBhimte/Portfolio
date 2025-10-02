@@ -8,7 +8,8 @@ import ProjectsPage from './pages/Projects.jsx';
 import Login from './pages/Login.jsx';
 import Admin from './pages/Admin.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
-import LoadingSpinner from './components/LoadingSpinner.jsx'; // Import the new component
+import LoadingSpinner from './components/LoadingSpinner.jsx';
+import { ThemeProvider } from './contexts/ThemeContext';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -38,17 +39,18 @@ const Root = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a loading delay
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Show loading spinner for 3 seconds
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <React.StrictMode>
-      {isLoading ? <LoadingSpinner /> : <RouterProvider router={router} />}
+      <ThemeProvider>
+        {isLoading ? <LoadingSpinner /> : <RouterProvider router={router} />}
+      </ThemeProvider>
     </React.StrictMode>
   );
 };

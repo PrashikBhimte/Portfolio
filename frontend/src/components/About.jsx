@@ -28,7 +28,12 @@ const About = () => {
       <h2 className="text-3xl font-mono font-bold text-center text-text-light mb-12">{about.title}</h2>
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="flex justify-center">
-          <img src={headshot} alt="Your Name" className="rounded-full w-96 h-64 object-cover border-accent shadow-lg" />
+          <img 
+            src={headshot} 
+            alt="Your Name" 
+            className="w-96 h-64 object-cover rounded-lg shadow-lg shadow-text-dark/20" 
+            // style={{ maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)' }}
+          />
         </div>
         <div>
           <p className="text-text-dark leading-relaxed mb-8">
@@ -38,7 +43,7 @@ const About = () => {
             href="https://drive.google.com/file/d/17lUuY3-YpB6eb6Zf8ktjVZbjPTnZCGAA/view?usp=sharing" // Make sure to place your resume in the `public` folder
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center bg-transparent border-2 border-accent text-accent font-bold py-2 px-6 rounded hover:bg-accent hover:bg-opacity-10 transition-all duration-300"
+            className="inline-flex items-center bg-transparent border-2 border-accent text-accent font-bold py-2 px-6 rounded hover:bg-accent hover:text-white hover:bg-opacity-10 transition-all duration-300"
           >
             <FaFileDownload className="mr-2" />
             <span>View Resume</span>

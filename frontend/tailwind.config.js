@@ -4,13 +4,15 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {
-        'primary-bg': '#0a192f',
-        'accent': '#64ffda',
-        'text-light': '#ccd6f6',
-        'text-dark': '#8892b0',
+        'primary-bg': 'var(--background-color)',
+        'surface': 'var(--surface-color)',
+        'text-primary': 'var(--text-primary)',
+        'text-secondary': 'var(--text-secondary)',
+        'accent': 'var(--accent-color)',
       },
       fontFamily: {
         'sans': ['Open Sans', 'sans-serif'],
@@ -18,5 +20,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }

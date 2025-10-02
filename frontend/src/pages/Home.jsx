@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import FeaturedProjects from '../components/FeaturedProjects';
 import Experience from '../components/Experience';
 import Education from '../components/Education';
 import Testimonials from '../components/Testimonials';
@@ -13,6 +14,7 @@ const HomePage = () => {
       <Hero />
       <main className="container mx-auto px-6 md:px-12">
         <About />
+        <FeaturedProjects />
         <Experience />
         <Education />
         <Certificates />

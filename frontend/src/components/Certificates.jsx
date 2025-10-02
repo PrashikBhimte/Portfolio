@@ -23,12 +23,24 @@ const Certificates = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {certificates.length > 0 ? (
             certificates.map((cert, index) => (
-              <div key={index} className="p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <h3 className="text-xl font-semibold text-text-dark">{cert.title}</h3>
-                <p className="text-xl text-blue-600 mt-2">{cert.issuer}</p>
-                <p className="text-text-dark mt-1">{cert.date}</p>
+              <div key={index} className="bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                <h3 className="text-xl font-semibold text-text-primary mb-2">{cert.title}</h3>
+                <p className="text-text-secondary mb-1">{cert.issuer}</p>
+                <p className="text-text-secondary text-sm mb-4">{cert.date}</p>
                 {cert.link && (
-                  <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline mt-4 block">View Certificate</a>
+                  <>
+                    <div className="aspect-w-16 aspect-h-9 mb-4">
+                      <iframe
+                        src={cert.link}
+                        title={cert.title}
+                        className="w-full h-full rounded-md"
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                    <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline mt-auto text-center">
+                      View Full Certificate
+                    </a>
+                  </>
                 )}
               </div>
             ))
