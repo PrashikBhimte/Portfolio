@@ -11,7 +11,7 @@ const Admin = () => {
   const [hero, setHero] = useState({ title: '', subtitle: '' });
   const [about, setAbout] = useState({ title: '', description: '' });
   const [projects, setProjects] = useState([]);
-  const [newProject, setNewProject] = useState({ title: '', description: '', imageUrl: '', link: '', technologies: '' });
+  const [newProject, setNewProject] = useState({ title: '', description: '', imageUrl: '', githubLink: '', liveLink: '', category: '', technologies: '', isFeatured: false });
   const [newExperience, setNewExperience] = useState({ title: '', company: '', date: '', description: '' });
   const [newEducation, setNewEducation] = useState({ institution: '', degree: '', date: '', description: '' });
   const [newCertificate, setNewCertificate] = useState({ title: '', issuer: '', date: '', link: '' });
@@ -107,11 +107,16 @@ const Admin = () => {
   };
 
   const handleProjectChange = (e, id) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     const updatedProjects = projects.map(p =>
-      p.id === id ? { ...p, [name]: value } : p
+      p.id === id ? { ...p, [name]: type === 'checkbox' ? checked : value } : p
     );
     setProjects(updatedProjects);
+  };
+
+  const handleNewProjectChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setNewProject({ ...newProject, [name]: type === 'checkbox' ? checked : value });
   };
 
   const handleProjectUpdate = async (e, id) => {
@@ -153,9 +158,7 @@ const Admin = () => {
     }
   };
 
-  const handleNewProjectChange = (e) => {
-    setNewProject({ ...newProject, [e.target.name]: e.target.value });
-  };
+
 
   const handleNewProjectSubmit = async (e) => {
     e.preventDefault();
@@ -171,7 +174,7 @@ const Admin = () => {
       });
       const data = await response.json();
       setProjects([...projects, data]);
-      setNewProject({ title: '', description: '', imageUrl: '', link: '', technologies: '' });
+      setNewProject({ title: '', description: '', imageUrl: '', githubLink: '', liveLink: '', category: '', technologies: '' });
       alert('Project added!');
     } catch (error) {
       console.error('Failed to add project', error);
@@ -563,12 +566,24 @@ const Admin = () => {
                   <input type="text" name="imageUrl" value={newProject.imageUrl} onChange={handleNewProjectChange} placeholder="Image URL" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                 </div>
                 <div>
-                  <label className="block text-gray-700 text-sm font-bold mb-2">Link</label>
-                  <input type="text" name="link" value={newProject.link} onChange={handleNewProjectChange} placeholder="Link" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                  <label className="block text-gray-700 text-sm font-bold mb-2">GitHub Link</label>
+                  <input type="text" name="githubLink" value={newProject.githubLink} onChange={handleNewProjectChange} placeholder="GitHub Link" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                </div>
+                <div>
+                  <label className="block text-gray-700 text-sm font-bold mb-2">Live Project URL</label>
+                  <input type="text" name="liveLink" value={newProject.liveLink} onChange={handleNewProjectChange} placeholder="Live Project URL" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                </div>
+                <div>
+                  <label className="block text-gray-700 text-sm font-bold mb-2">Category</label>
+                  <input type="text" name="category" value={newProject.category} onChange={handleNewProjectChange} placeholder="Category" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                 </div>
                 <div>
                   <label className="block text-gray-700 text-sm font-bold mb-2">Technologies (comma-separated)</label>
                   <input type="text" name="technologies" value={newProject.technologies} onChange={handleNewProjectChange} placeholder="Technologies (e.g., React, Node.js)" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                </div>
+                <div className="flex items-center">
+                  <input type="checkbox" name="isFeatured" checked={newProject.isFeatured} onChange={handleNewProjectChange} className="mr-2" />
+                  <label className="text-gray-700 text-sm font-bold">Feature on Home Page</label>
                 </div>
                 <button type="submit" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">Add Project</button>
               </form>
@@ -593,16 +608,28 @@ const Admin = () => {
                         <input type="text" name="imageUrl" value={project.imageUrl} onChange={(e) => handleProjectChange(e, project.id)} placeholder="Image URL" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                     </div>
                     <div>
-                        <label className="block text-gray-700 text-sm font-bold mb-2">Link</label>
-                        <input type="text" name="link" value={project.link} onChange={(e) => handleProjectChange(e, project.id)} placeholder="Link" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                        <label className="block text-gray-700 text-sm font-bold mb-2">GitHub Link</label>
+                        <input type="text" name="githubLink" value={project.githubLink} onChange={(e) => handleProjectChange(e, project.id)} placeholder="GitHub Link" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                     </div>
                     <div>
-                        <label className="block text-gray-700 text-sm font-bold mb-2">Technologies (comma-separated)</label>
-                        <input type="text" name="technologies" value={Array.isArray(project.technologies) ? project.technologies.join(', ') : project.technologies} onChange={(e) => handleProjectChange(e, project.id)} placeholder="Technologies (e.g., React, Node.js)" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                        <label className="block text-gray-700 text-sm font-bold mb-2">Live Project URL</label>
+                        <input type="text" name="liveLink" value={project.liveLink} onChange={(e) => handleProjectChange(e, project.id)} placeholder="Live Project URL" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                     </div>
-                    <div className="flex justify-end space-x-2 mt-4">
-                        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">Update</button>
-                        <button type="button" onClick={() => handleProjectDelete(project.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">Delete</button>
+                    <div>
+                        <label className="block text-gray-700 text-sm font-bold mb-2">Category</label>
+                        <input type="text" name="category" value={project.category} onChange={(e) => handleProjectChange(e, project.id)} placeholder="Category" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Technologies (comma-separated)</label>
+                        <input type="text" name="technologies" value={Array.isArray(project.technologies) ? project.technologies.join(', ') : project.technologies} onChange={(e) => handleProjectChange(e, project.id)} placeholder="Technologies (e.g., React, Node.js)" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" name="isFeatured" checked={project.isFeatured} onChange={(e) => handleProjectChange(e, project.id)} class="mr-2" />
+                        <label class="text-gray-700 text-sm font-bold">Feature on Home Page</label>
+                    </div>
+                    <div class="flex justify-end space-x-2 mt-4">
+                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">Update</button>
+                        <button type="button" onClick={() => handleProjectDelete(project.id)} class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">Delete</button>
                     </div>
                   </form>
                 </div>

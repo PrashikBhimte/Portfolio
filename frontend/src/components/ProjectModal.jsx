@@ -4,9 +4,7 @@ import { FaExternalLinkAlt, FaGithub, FaTimes } from 'react-icons/fa';
 const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
-  const { title, description, technologies, liveDemo, link, image, report } = project;
-
-  console.log('ProjectModal render:', project.link);
+  const { title, description, technologies, liveLink, githubLink, image, report } = project;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
@@ -27,15 +25,15 @@ const ProjectModal = ({ project, onClose }) => {
               ))}
             </div>
 
-            <p className="text-text-secondary mb-6">{description}</p>
+                        <p className="text-text-secondary mb-6" style={{ whiteSpace: 'pre-wrap' }}>{description}</p>
 
             <div className="flex items-center space-x-4 mb-6">
-              {liveDemo && (
-                <a href={liveDemo} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-text-secondary hover:text-accent transition-colors">
+              {liveLink && (
+                <a href={liveLink} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-text-secondary hover:text-accent transition-colors">
                   <FaExternalLinkAlt /> <span>Live Demo</span>
                 </a>
               )}
-              <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-text-secondary hover:text-accent transition-colors">
+              <a href={githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-text-secondary hover:text-accent transition-colors">
                 <FaGithub /> <span>View Source</span>
               </a>
             </div>

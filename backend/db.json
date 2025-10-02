@@ -13,7 +13,10 @@
       "title": " CareSlot – Comprehensive Hospital Management System",
       "description": "CareSlot is an end-to-end hospital management system developed as part of our third-year academic project to modernize healthcare administration and improve both patient experience and staff efficiency.\n\n🔹 The system is built with a modular architecture and consists of:\n\nA desktop application (Python + Tkinter) used by hospital staff for managing patient records, appointments, and reports.\n\nA web-based patient portal (React.js) that allows users to book, cancel, or view appointments, manage their profiles, and receive smart doctor recommendations.\n\nA secure Flask-based backend that handles all server-side logic and connects to a robust MySQL database for data storage and operations.\n\n🔒 Features like role-based access control (RBAC) ensure secure access to features based on roles (Admin, Doctor, Employee), while performance-optimized API endpoints enable seamless communication between the front-end and backend.\n\n⚙️ Key Highlights:\n\nReal-time appointment scheduling system with easy rescheduling and cancellation.\n\nDoctor recommendation engine based on patient conditions or history.\n\nSecure API testing and validation through Postman, ensuring reliable performance.\n\nScalable backend structure ready for future enhancements like billing modules and pharmacy integration.\n\nThis project was a significant milestone in our academic journey, providing hands-on experience in full-stack development, modular design, and real-world problem solving in the healthcare domain.",
       "imageUrl": "https://via.placeholder.com/300",
-      "link": "https://github.com/PrashikBhimte/CareSlot",
+      "githubLink": "https://github.com/PrashikBhimte/CareSlot",
+      "liveLink": "",
+      "category": "Full Stack",
+      "isFeatured": true,
       "technologies": [
         "Python",
         "MySQL",
@@ -28,7 +31,10 @@
       "title": " ANN prediction of electrical energy output of a Combined Cycle Power Plant",
       "description": "This project aims to develop an Artificial Neural Network (ANN) model to predict the electrical energy output of a combined cycle power plant. The model is trained on a dataset of historical power plant data, including input parameters such as temperature, pressure, and flow rate, and output parameter of electrical energy output. The goal is to achieve high accuracy in predicting electrical energy output, enabling optimal operation and maintenance of the power plant.\n\nKey Features:\n\n- Development of an ANN model using TensorFlow and Scikit-learn libraries\n- Training on a dataset of historical power plant data\n- Prediction of electrical energy output with high accuracy (90.36%)\n- Potential applications in real-time prediction and optimization of power plant operation\n\nOutcome:\n\n- A trained ANN model capable of predicting electrical energy output with high accuracy\n- A Python script for making predictions using the trained model\n- A report detailing the project methodology, results, and conclusions",
       "imageUrl": "https://via.placeholder.com/300",
-      "link": "https://github.com/PrashikBhimte/ANN-electric-energy",
+      "githubLink": "https://github.com/PrashikBhimte/ANN-electric-energy",
+      "liveLink": "",
+      "category": "Machine Learning",
+      "isFeatured": true,
       "technologies": [
         "Python",
         "TensorFlow",
@@ -42,7 +48,10 @@
       "title": " Profit Prediction using Machine Learning",
       "description": "As a passionate learner in machine learning, I built a regression-based project using the 50 Startups dataset to predict startup profit from investment features like R&D, Administration, and Marketing spend. I implemented five models: Multiple Linear Regression, Polynomial Regression, Decision Tree, Random Forest, and Support Vector Regression.\n\nEach model was evaluated using R² score, with Decision Tree Regression achieving the highest accuracy of 0.976. I visualized predictions versus actual profits using Matplotlib bar charts to gain intuitive insights into model performance. This project deepened my understanding of the regression workflow, overfitting vs. generalization, and the power of ensemble methods.\n\n🔍 Key Takeaways:\n\nDeep dive into model comparison using sklearn\n\nVisual analytics for performance review\n\nLearned how different regression techniques behave with small datasets",
       "imageUrl": "https://via.placeholder.com/300",
-      "link": "https://github.com/PrashikBhimte/Profit-Prediction-Using-50-Startups",
+      "githubLink": "https://github.com/PrashikBhimte/Profit-Prediction-Using-50-Startups",
+      "liveLink": "",
+      "category": "Machine Learning",
+      "isFeatured": false,
       "technologies": [
         "Python",
         "Scikit-Learn",
@@ -56,7 +65,10 @@
       "title": "Predicting Passenger Survival on the Titanic Using Machine Learning Techniques",
       "description": "This project leverages machine learning algorithms to predict passenger survival on the RMS Titanic, utilizing a publicly available dataset. The study evaluates and compares the performance of various classification models, including Logistic Regression, SVM, KNN, Random Forest, and Artificial Neural Network.\n\nObjectives:\n\n1. Predict passenger survival on the Titanic using machine learning algorithms.\n2. Evaluate and compare the performance of different classification models.\n\nMethodology:\n\n1. Utilized the Kaggle Titanic dataset with 891 training instances and 418 test instances.\n2. Preprocessed data using SimpleImputer, OneHotEncoder, and StandardScaler.\n3. Evaluated Logistic Regression, SVM, KNN, Random Forest, and Artificial Neural Network models.\n\nResults:\n\n1. Artificial Neural Network achieved the highest accuracy of 0.78229.\n2. Comparative analysis of model performances.\n\nConclusion:\n\n1. Machine learning algorithms can effectively predict passenger survival on the Titanic.\n2. Artificial Neural Network outperformed other models in predicting survival.\n",
       "imageUrl": "https://via.placeholder.com/300",
-      "link": "https://github.com/PrashikBhimte/Titanic---Machine-Learning-from-Disaster",
+      "githubLink": "https://github.com/PrashikBhimte/Titanic---Machine-Learning-from-Disaster",
+      "liveLink": "",
+      "category": "Machine Learning",
+      "isFeatured": false,
       "technologies": [
         "Python",
         "TensorFlow",
@@ -70,7 +82,10 @@
       "title": "Automated Paperless Transparent College System",
       "description": "Traditional college administrative processes often lack transparency, efficiency, and student involvement. Manual workflows for elections, approvals, complaints, and budget tracking create bottlenecks and reduce accountability.\n\nTo solve this, we developed an Automated Paperless Transparent College System, a web-based platform that digitizes key administrative functions, ensuring transparency, efficiency, and accessibility for students and faculty.\n\n🔑 Key Features & Functionalities:\n✅ Student Election System – Secure online voting with face recognition for authentication, email notifications, and live result tracking. Faculty can also set branch/year restrictions for candidates.\n\n✅ Automated Health & Leave Notifications – Parents are notified when students enter/exit campus, and class coordinators receive alerts for sick students.\n\n✅ Campus Facility Booking – Online reservation for campus facilities (e.g., auditorium, sports courts) with real-time availability and approval workflows.\n\n✅ Transparent Application & Approval System – Event, budget, and sponsorship approvals with tracking. Faculty can accept, reject, or forward applications dynamically.\n\n✅ Academic Integrity & Cheating Record System – Public database for recorded cheating incidents to uphold academic discipline.\n\n✅ Anonymous Complaint System – Students can raise concerns anonymously, with moderation to prevent misuse. Identities are only revealed if approved by a majority of board members.\n\n✅ Transparent Budget & Sponsorship Tracking – All sponsorships and college budgets are publicly accessible, with proof of expenses uploaded for verification.\n\n✅ Restricted Access – Only students and faculty with college email IDs can access the system.\n\n🛠 Tech Stack\nFrontend: React.js, Bootstrap\nBackend: FastAPI\nDatabase: Supabase\nFace Recognition: Integrated for secure voting",
       "imageUrl": "https://via.placeholder.com/300",
-      "link": "https://github.com/PrashikBhimte/404-server",
+      "githubLink": "https://github.com/PrashikBhimte/404-server",
+      "liveLink": "",
+      "category": "Full Stack",
+      "isFeatured": false,
       "technologies": [
         "Python",
         "FastAPI",
@@ -133,14 +148,14 @@
       "title": "Natural Language Processing with Deep Learning in Python",
       "issuer": "Udemy",
       "date": "05 December 2024",
-      "link": "https://www.udemy.com/certificate/UC-2acfd7fc-da1e-454a-a9ae-d2fd8a4b6866/"
+      "link": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-2acfd7fc-da1e-454a-a9ae-d2fd8a4b6866.pdf"
     },
     {
       "id": 1757591037635,
       "title": "TensorFlow Developer Certificate Exam Practice Tests 2024",
       "issuer": "Udemy",
       "date": "07 August 2024",
-      "link": "https://www.udemy.com/certificate/UC-d42a0074-c550-474f-9775-6e56941ceeea/"
+      "link": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-d42a0074-c550-474f-9775-6e56941ceeea.pdf"
     }
   ],
   "testimonials": [

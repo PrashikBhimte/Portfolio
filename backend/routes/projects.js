@@ -6,6 +6,18 @@ const { authenticateJWT } = require('./auth');
 const router = express.Router();
 
 // Project routes
+router.get('/featured', (req, res) => {
+  fs.readFile(path.join(__dirname, '../db.json'), 'utf8', (err, data) => {
+    if (err) {
+      res.status(500).json({ error: 'Failed to read data' });
+      return;
+    }
+    const db = JSON.parse(data);
+    const featuredProjects = db.projects.filter(p => p.isFeatured);
+    res.json(featuredProjects);
+  });
+});
+
 router.get('/', (req, res) => {
   fs.readFile(path.join(__dirname, '../db.json'), 'utf8', (err, data) => {
     if (err) {
@@ -79,6 +91,18 @@ router.delete('/:id', authenticateJWT, (req, res) => {
       }
       res.status(204).send();
     });
+  });
+});
+
+router.get('/categories', (req, res) => {
+  fs.readFile(path.join(__dirname, '../db.json'), 'utf8', (err, data) => {
+    if (err) {
+      res.status(500).json({ error: 'Failed to read data' });
+      return;
+    }
+    const db = JSON.parse(data);
+    const categories = [...new Set(db.projects.map(p => p.category))];
+    res.json(categories);
   });
 });
 

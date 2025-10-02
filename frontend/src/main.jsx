@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { LoaderProvider, useLoader } from './contexts/LoaderContext';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -35,24 +36,24 @@ const router = createBrowserRouter([
   },
 ]);
 
-const Root = () => {
-  const [isLoading, setIsLoading] = useState(true);
+const AppWithLoader = () => {
+  const { isLoading, setIsLoading } = useLoader();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 1000);
+  }, [setIsLoading]);
 
-    return () => clearTimeout(timer);
-  }, []);
+  return isLoading ? <LoadingSpinner /> : <RouterProvider router={router} />;
+}
 
-  return (
-    <React.StrictMode>
-      <ThemeProvider>
-        {isLoading ? <LoadingSpinner /> : <RouterProvider router={router} />}
-      </ThemeProvider>
-    </React.StrictMode>
-  );
-};
-
-ReactDOM.createRoot(document.getElementById('root')).render(<Root />);
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <LoaderProvider>
+        <AppWithLoader />
+      </LoaderProvider>
+    </ThemeProvider>
+  </React.StrictMode>
+);

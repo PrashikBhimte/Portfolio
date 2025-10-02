@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 
-const FeaturedProjects = () => {
+const FeaturedProjectsPage = () => {
   const [projects, setProjects] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/featured`);
         const data = await response.json();
-        setProjects(data.slice(0, 2)); // Get the first 2 projects
+        setProjects(data);
       } catch (error) {
         console.error('Failed to fetch projects', error);
       }
@@ -36,9 +37,14 @@ const FeaturedProjects = () => {
           <ProjectCard key={project.id} project={project} onOpen={handleOpenModal} />
         ))}
       </div>
+      <div className="text-center mt-12">
+        <Link to="/projects" className="bg-primary-light text-background-dark font-bold py-3 px-6 rounded-lg hover:bg-primary-dark transition-colors">
+          View More
+        </Link>
+      </div>
       <ProjectModal project={selectedProject} onClose={handleCloseModal} />
     </section>
   );
 };
 
-export default FeaturedProjects;
+export default FeaturedProjectsPage;
