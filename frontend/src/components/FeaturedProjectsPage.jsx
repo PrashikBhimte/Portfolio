@@ -12,7 +12,7 @@ const FeaturedProjectsPage = () => {
       try {
         const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/featured`);
         const data = await response.json();
-        setProjects(data);
+        setProjects(data.reverse());
       } catch (error) {
         console.error('Failed to fetch projects', error);
       }

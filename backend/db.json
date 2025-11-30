@@ -9,24 +9,6 @@
   },
   "projects": [
     {
-      "id": 1,
-      "title": " CareSlot – Comprehensive Hospital Management System",
-      "description": "CareSlot is an end-to-end hospital management system developed as part of our third-year academic project to modernize healthcare administration and improve both patient experience and staff efficiency.\n\n🔹 The system is built with a modular architecture and consists of:\n\nA desktop application (Python + Tkinter) used by hospital staff for managing patient records, appointments, and reports.\n\nA web-based patient portal (React.js) that allows users to book, cancel, or view appointments, manage their profiles, and receive smart doctor recommendations.\n\nA secure Flask-based backend that handles all server-side logic and connects to a robust MySQL database for data storage and operations.\n\n🔒 Features like role-based access control (RBAC) ensure secure access to features based on roles (Admin, Doctor, Employee), while performance-optimized API endpoints enable seamless communication between the front-end and backend.\n\n⚙️ Key Highlights:\n\nReal-time appointment scheduling system with easy rescheduling and cancellation.\n\nDoctor recommendation engine based on patient conditions or history.\n\nSecure API testing and validation through Postman, ensuring reliable performance.\n\nScalable backend structure ready for future enhancements like billing modules and pharmacy integration.\n\nThis project was a significant milestone in our academic journey, providing hands-on experience in full-stack development, modular design, and real-world problem solving in the healthcare domain.",
-      "imageUrl": "https://via.placeholder.com/300",
-      "githubLink": "https://github.com/PrashikBhimte/CareSlot",
-      "liveLink": "",
-      "category": "Full Stack",
-      "isFeatured": true,
-      "technologies": [
-        "Python",
-        "MySQL",
-        "Flask",
-        "Tkinter",
-        "React.js",
-        "REST APIs"
-      ]
-    },
-    {
       "id": 2,
       "title": " ANN prediction of electrical energy output of a Combined Cycle Power Plant",
       "description": "This project aims to develop an Artificial Neural Network (ANN) model to predict the electrical energy output of a combined cycle power plant. The model is trained on a dataset of historical power plant data, including input parameters such as temperature, pressure, and flow rate, and output parameter of electrical energy output. The goal is to achieve high accuracy in predicting electrical energy output, enabling optimal operation and maintenance of the power plant.\n\nKey Features:\n\n- Development of an ANN model using TensorFlow and Scikit-learn libraries\n- Training on a dataset of historical power plant data\n- Prediction of electrical energy output with high accuracy (90.36%)\n- Potential applications in real-time prediction and optimization of power plant operation\n\nOutcome:\n\n- A trained ANN model capable of predicting electrical energy output with high accuracy\n- A Python script for making predictions using the trained model\n- A report detailing the project methodology, results, and conclusions",
@@ -34,7 +16,7 @@
       "githubLink": "https://github.com/PrashikBhimte/ANN-electric-energy",
       "liveLink": "",
       "category": "Machine Learning",
-      "isFeatured": true,
+      "isFeatured": false,
       "technologies": [
         "Python",
         "TensorFlow",
@@ -94,6 +76,57 @@
         "Boostrap",
         "React.js"
       ]
+    },
+    {
+      "id": 1,
+      "title": " CareSlot - Comprehensive Hospital Management System",
+      "description": "CareSlot is an end-to-end hospital management system developed as part of our third-year academic project to modernize healthcare administration and improve both patient experience and staff efficiency.\n\n🔹 The system is built with a modular architecture and consists of:\n\nA desktop application (Python + Tkinter) used by hospital staff for managing patient records, appointments, and reports.\n\nA web-based patient portal (React.js) that allows users to book, cancel, or view appointments, manage their profiles, and receive smart doctor recommendations.\n\nA secure Flask-based backend that handles all server-side logic and connects to a robust MySQL database for data storage and operations.\n\n🔒 Features like role-based access control (RBAC) ensure secure access to features based on roles (Admin, Doctor, Employee), while performance-optimized API endpoints enable seamless communication between the front-end and backend.\n\n⚙️ Key Highlights:\n\nReal-time appointment scheduling system with easy rescheduling and cancellation.\n\nDoctor recommendation engine based on patient conditions or history.\n\nSecure API testing and validation through Postman, ensuring reliable performance.\n\nScalable backend structure ready for future enhancements like billing modules and pharmacy integration.\n\nThis project was a significant milestone in our academic journey, providing hands-on experience in full-stack development, modular design, and real-world problem solving in the healthcare domain.",
+      "imageUrl": "https://via.placeholder.com/300",
+      "githubLink": "https://github.com/PrashikBhimte/CareSlot",
+      "liveLink": "",
+      "category": "Full Stack",
+      "isFeatured": false,
+      "technologies": [
+        "Python",
+        "MySQL",
+        "Flask",
+        "Tkinter",
+        "React.js",
+        "REST APIs"
+      ]
+    },
+    {
+      "id": 1759431178036,
+      "title": "Multi-Approach Twitter Sentiment Analysis",
+      "description": "Developed and compared two distinct models for tweet sentiment analysis: a machine learning pipeline using TF-IDF with Logistic Regression (achieving 84% accuracy) and a deep learning solution using a pre-trained BERT model (achieving a 0.92 F1-score for the positive class).\n\nExecuted an intensive data preprocessing workflow to clean and structure a noisy dataset, which involved the complex task of consolidating 279 unique, user-generated labels into 3 coherent sentiment categories (Positive, Negative, Neutral).\n\nEngineered a traditional NLP model by coupling a TF-IDF Vectorizer with a Logistic Regression classifier, ensuring model robustness by first balancing the dataset to address significant class disparity.\n\nBuilt and deployed a versatile command-line interface (CLI) that allows for the real-time sentiment classification of any input tweet, providing the flexibility to use either the high-accuracy ML model or the context-aware DL model for predictions.",
+      "imageUrl": "https://via.placeholder.com/300",
+      "githubLink": "https://github.com/PrashikBhimte/Twitter-Sentiment-Analysis",
+      "liveLink": "https://twitter-sentiment-analysis-pi.vercel.app/",
+      "category": "Machine Learning",
+      "technologies": [
+        "Python",
+        "NLTK",
+        "Scikit-learn",
+        "Transformers (BERT)"
+      ],
+      "isFeatured": true
+    },
+    {
+      "id": 1764510379690,
+      "title": "CardioCare: Predictive Diabetic Diagnosis System",
+      "description": "Developed a full-stack web application for the early detection of diabetes, providing instant risk assessment from user-inputted health metrics.\n\nEngineered a Random Forest Classifier using the PIMA Indians Diabetes Database, achieving a predictive accuracy of 78% after extensive hyperparameter tuning with GridSearchCV.\n\nOptimized the model to achieve a high recall of 73% for the diabetic class, strategically minimizing false negatives to ensure at-risk individuals are flagged for medical review.\n\nBuilt an end-to-end system with a FastAPI backend to serve the model via a REST API and a user-friendly React frontend for a seamless experience.",
+      "imageUrl": "https://via.placeholder.com/300",
+      "githubLink": "https://github.com/PrashikBhimte/CardioCare",
+      "liveLink": "https://cardio-care-gamma.vercel.app/",
+      "category": "Machine Learning",
+      "technologies": [
+        "Python",
+        "Scikit-Learn",
+        "Regression Analysis",
+        "Data Visualization",
+        "Matplotlib"
+      ],
+      "isFeatured": true
     }
   ],
   "experience": [
