@@ -126,6 +126,27 @@
         "Data Visualization",
         "Matplotlib"
       ],
+      "isFeatured": false
+    },
+    {
+      "id": 1764512371220,
+      "title": "End-to-End Customer Churn Prediction System",
+      "description": "Built and deployed a full-stack machine learning application to predict customer churn for a telecom company. The system proactively identifies at-risk customers using a sophisticated stacked ensemble model, enabling targeted retention strategies.\n\nKey Contributions:\n\nMachine Learning Pipeline: Developed a robust ML pipeline (Python, Scikit-learn, XGBoost) featuring a stacked ensemble model. Optimized performance using SMOTE for class imbalance and GridSearchCV for hyperparameter tuning, achieving a significant improvement in churn recall (57%).\n\nExplainable AI: Integrated SHAP (SHapley Additive exPlanations) to interpret model predictions, revealing key churn drivers like tenure and monthly charges to stakeholders.\n\nBackend API: Engineered a high-performance RESTful API using FastAPI to serve real-time predictions.\n\nFrontend Application: Designed a responsive, multi-step React application (Vite + Tailwind CSS) for user-friendly data input and result visualization.\n\nMLOps & Deployment: Containerized the application using Docker for portability. Implemented a CI/CD pipeline with GitHub Actions for automated testing and build processes. Deployed the frontend on Vercel and the backend on cloud infrastructure.",
+      "imageUrl": "https://via.placeholder.com/300",
+      "githubLink": "https://github.com/PrashikBhimte/Telco-Customer-Churn-Prediction",
+      "liveLink": "https://telco-customer-churn-prediction-nine.vercel.app/",
+      "category": "Machine Learning",
+      "technologies": [
+        "Python",
+        "Scikit-learn",
+        "XGBoost",
+        "FastAPI",
+        "React",
+        "Docker",
+        "GitHub Actions",
+        "SHAP",
+        "MLflow"
+      ],
       "isFeatured": true
     }
   ],
